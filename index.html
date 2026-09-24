@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozina Punjwani — Creative Strategist & Marketing Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Outline typography styling for numbers matching the reference */
+        .outline-text-rose { color: transparent; -webkit-text-stroke: 1.5px #d48f97; }
+        .outline-text-purple { color: transparent; -webkit-text-stroke: 1.5px #9996c2; }
+        .outline-text-blue { color: transparent; -webkit-text-stroke: 1.5px #8ab0ce; }
+        .outline-text-teal { color: transparent; -webkit-text-stroke: 1.5px #74b8ad; }
+        
+        /* Infinite Marquee Animation */
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: slide 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Rotating word animation */
+        .cycle-word {
+            display: inline-block;
+            transition: opacity 0.25s, transform 0.25s;
+        }
+        .cycle-word.out {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+    </style>
+</head>
+<body class="bg-[#EAE6F8] text-gray-900 antialiased selection:bg-purple-200">
+
+    <!-- Header Navigation -->
+    <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
+        <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-full px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-xl font-extrabold tracking-tight">Rozina<span class="text-purple-600">.</span></span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+                <a href="#home" class="hover:text-black transition">Home</a>
+                <a href="#work" class="hover:text-black transition">Work</a>
+                <a href="#about" class="hover:text-black transition">About</a>
+                <a href="#process" class="hover:text-black transition">Process</a>
+                <a href="#writing" class="hover:text-black transition">Blog</a>
+            </div>
+
+            <div>
+                <a href="#contact" class="bg-[#3F5560] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5B7480] transition-all shadow-sm">
+                    Résumé
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="max-w-6xl mx-auto px-6 pt-16 pb-16 text-center reveal">
+        <div class="inline-block bg-white border border-black px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase text-gray-900 mb-6 shadow-sm">
+            Creative Strategist & Marketing Manager
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-4">
+            Hello! I'm Rozina, <br>a creative strategist.
+        </h1>
+        <p class="text-xl md:text-2xl font-semibold text-[#D9826B] mb-6">
+            I build brands that <span id="cycle-target" class="cycle-word border-b-2 border-[#D9826B]">grow</span>
+        </p>
+        <p class="max-w-2xl mx-auto text-lg text-gray-700 mb-12">
+            I combine <strong class="text-gray-900 underline decoration-wavy decoration-[#D9826B]">strategy</strong>, <strong class="text-gray-900 underline decoration-wavy decoration-[#D9826B]">design</strong> and <strong class="text-gray-900 underline decoration-wavy decoration-[#D9826B]">marketing</strong> to make campaigns that look right and drive results.
+        </p>
+
+        <!-- Feature Cards with provided icons -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
+            <a href="#work" class="bg-white rounded-[32px] p-8 shadow-sm border border-black flex flex-col items-center justify-between text-center transition hover:-translate-y-1">
+                <div>
+                    <div class="w-16 h-16 bg-[#F0F5FF] border border-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm overflow-hidden p-2.5">
+                        <img src="internet_2.png" alt="My Portfolio Icon" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">My Portfolio</h3>
+                    <p class="text-sm text-gray-600">Explore selected projects and my approach to design.</p>
+                </div>
+                <div class="mt-8 w-10 h-10 rounded-full border border-black flex items-center justify-center text-gray-900">→</div>
+            </a>
+
+            <a href="#about" class="bg-white rounded-[32px] p-8 shadow-sm border border-black flex flex-col items-center justify-between text-center transition hover:-translate-y-1">
+                <div>
+                    <div class="w-16 h-16 bg-[#FFF9E6] border border-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm overflow-hidden p-2.5">
+                        <img src="book_2.png" alt="About Me Icon" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">About Me</h3>
+                    <p class="text-sm text-gray-600">A closer look at my background, skills, and creative journey.</p>
+                </div>
+                <div class="mt-8 w-10 h-10 rounded-full border border-black flex items-center justify-center text-gray-900">→</div>
+            </a>
+
+            <a href="#contact" class="bg-white rounded-[32px] p-8 shadow-sm border border-black flex flex-col items-center justify-between text-center transition hover:-translate-y-1">
+                <div>
+                    <div class="w-16 h-16 bg-[#E8F8F5] border border-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm overflow-hidden p-2.5">
+                        <img src="letter_2.png" alt="Contact Me Icon" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Contact Me</h3>
+                    <p class="text-sm text-gray-600">Let's work together to bring your ideas and vision to life.</p>
+                </div>
+                <div class="mt-8 w-10 h-10 rounded-full border border-black flex items-center justify-center text-gray-900">→</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Animated Infinite Marquee Tools Strip -->
+    <div class="bg-white border-y border-black py-5 overflow-hidden my-6">
+        <div class="animate-marquee flex gap-8 whitespace-nowrap text-sm font-semibold text-gray-700">
+            <span class="px-6 py-2 rounded-full border border-black bg-purple-50">Adobe Creative Suite</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-pink-50">Canva</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-blue-50">Google Analytics</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-green-50">Google Ads</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-yellow-50">HubSpot</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-purple-50">WordPress</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-pink-50">Elementor</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-blue-50">SEO</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-green-50">Email Marketing</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-yellow-50">Generative AI</span>
+            <!-- Duplicate for infinite smooth scroll effect -->
+            <span class="px-6 py-2 rounded-full border border-black bg-purple-50">Adobe Creative Suite</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-pink-50">Canva</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-blue-50">Google Analytics</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-green-50">Google Ads</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-yellow-50">HubSpot</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-purple-50">WordPress</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-pink-50">Elementor</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-blue-50">SEO</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-green-50">Email Marketing</span>
+            <span class="px-6 py-2 rounded-full border border-black bg-yellow-50">Generative AI</span>
+        </div>
+    </div>
+
+    <!-- Selected Works Section -->
+    <section id="work" class="py-24 max-w-6xl mx-auto px-6 reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">My selected works</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">
+                With my keen eye for detail and sharp critical thinking skills, I specialize in crafting captivating <strong class="text-gray-900 underline decoration-wavy">websites</strong>, <strong class="text-gray-900 underline decoration-wavy">products</strong>, and <strong class="text-gray-900 underline decoration-wavy">experiences</strong>.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <div class="bg-white border border-black rounded-3xl p-8 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-bold tracking-wider uppercase text-gray-500 mb-2 block">Media Planning &bull; Mondelez</span>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Tang Media Strategy</h3>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Translated business objectives into an integrated media plan, linking TV, digital and in-store activity into one consistent message.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="border border-black bg-pink-100 rounded-xl px-4 py-2"><small class="text-xs text-gray-600 block">Sales lift</small><strong class="text-xl font-bold">30%</strong></div>
+                        <div class="border border-black bg-gray-50 rounded-xl px-4 py-2"><small class="text-xs text-gray-600 block">Channels</small><strong class="text-sm font-bold">TV &bull; Digital &bull; In-store</strong></div>
+                    </div>
+                    <a href="#" class="inline-block bg-white border border-black font-semibold px-6 py-3 rounded-full text-sm hover:bg-black hover:text-white transition shadow-sm">View project →</a>
+                </div>
+                <div class="bg-pink-50 border border-black rounded-2xl p-6 flex items-center justify-center min-h-[250px]">
+                    <div class="text-center text-gray-600 font-medium">Tang Campaign Mockup Preview</div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-black rounded-3xl p-8 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-bold tracking-wider uppercase text-gray-500 mb-2 block">UX/UI &bull; SEO &bull; WordPress</span>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">A1Dynamics.com Redesign</h3>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        A structured redesign with clear content modules and search-friendly pages, built to guide B2B visitors toward the next step.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="border border-black bg-cyan-100 rounded-xl px-4 py-2"><small class="text-xs text-gray-600 block">Organic traffic</small><strong class="text-xl font-bold">40%</strong></div>
+                        <div class="border border-black bg-gray-50 rounded-xl px-4 py-2"><small class="text-xs text-gray-600 block">Built with</small><strong class="text-sm font-bold">WordPress &bull; Elementor</strong></div>
+                    </div>
+                    <a href="#" class="inline-block bg-white border border-black font-semibold px-6 py-3 rounded-full text-sm hover:bg-black hover:text-white transition shadow-sm">View project →</a>
+                </div>
+                <div class="bg-cyan-50 border border-black rounded-2xl p-6 flex items-center justify-center min-h-[250px]">
+                    <div class="text-center text-gray-600 font-medium">A1 Dynamics Website Preview</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-16">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Are you ready to see more?</h3>
+            <a href="#" class="inline-block bg-[#3F5560] text-white font-semibold px-8 py-3.5 rounded-full text-sm hover:bg-[#5B7480] transition shadow-sm">
+                See all works
+            </a>
+        </div>
+    </section>
+
+    <!-- My Numbers Say It All Section -->
+    <section class="py-20 max-w-5xl mx-auto px-6 reveal">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">My numbers say it all</h2>
+            <p class="text-gray-600">Experience and measurable impact behind the work.</p>
+        </div>
+
+        <!-- Row 1: Three Pill Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+            <div class="bg-white border border-black rounded-full px-6 py-4 flex items-center justify-between shadow-sm">
+                <span class="text-4xl font-bold tracking-tight outline-text-rose">8+</span>
+                <span class="text-[11px] font-medium text-gray-700 text-left leading-tight pl-2">Years in advertising<br>and marketing</span>
+            </div>
+            <div class="bg-white border border-black rounded-full px-6 py-4 flex items-center justify-between shadow-sm">
+                <span class="text-4xl font-bold tracking-tight outline-text-purple">30%</span>
+                <span class="text-[11px] font-medium text-gray-700 text-left leading-tight pl-2">Sales increase, Tang<br>media strategy</span>
+            </div>
+            <div class="bg-white border border-black rounded-full px-6 py-4 flex items-center justify-between shadow-sm">
+                <span class="text-4xl font-bold tracking-tight outline-text-blue">40%</span>
+                <span class="text-[11px] font-medium text-gray-700 text-left leading-tight pl-2">Organic traffic increase,<br>A1 Dynamics</span>
+            </div>
+        </div>
+
+        <!-- Row 2: Two Pill Cards Centered -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            <div class="bg-white border border-black rounded-full px-6 py-4 flex items-center justify-between shadow-sm">
+                <span class="text-4xl font-bold tracking-tight outline-text-teal">3</span>
+                <span class="text-[11px] font-medium text-gray-700 text-left leading-tight pl-2">Countries:<br>Canada, UAE, Pakistan</span>
+            </div>
+            <div class="bg-white border border-black rounded-full px-6 py-4 flex items-center justify-between shadow-sm">
+                <span class="text-4xl font-bold tracking-tight outline-text-rose">4.0</span>
+                <span class="text-[11px] font-medium text-gray-700 text-left leading-tight pl-2">GPA, MBA, Indiana<br>State University</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Working Process Section -->
+    <section id="process" class="py-24 max-w-6xl mx-auto px-6 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">How I turn goals into work that performs.</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    My process links business objectives to creative decisions, then checks them against real numbers.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-[#F8EBE8] border border-black rounded-3xl p-8 relative shadow-sm">
+                    <span class="absolute top-6 right-6 text-xs font-bold text-gray-600">(01)</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Understand the goal</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">I start with the business objective, the audience and the market, so the creative has a clear job.</p>
+                </div>
+                <div class="bg-[#E8F8EC] border border-black rounded-3xl p-8 relative shadow-sm">
+                    <span class="absolute top-6 right-6 text-xs font-bold text-gray-600">(02)</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Shape the idea</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Strategy and creativity meet in a brief and a concept the whole team can rally behind.</p>
+                </div>
+                <div class="bg-[#FCEAEB] border border-black rounded-3xl p-8 relative shadow-sm">
+                    <span class="absolute top-6 right-6 text-xs font-bold text-gray-600">(03)</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Build the system</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Identity, campaign assets and editable templates, so quality holds up at scale.</p>
+                </div>
+                <div class="bg-[#EAE6F8] border border-black rounded-3xl p-8 relative shadow-sm">
+                    <span class="absolute top-6 right-6 text-xs font-bold text-gray-600">(04)</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Measure and refine</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">I review performance data weekly and adjust the plan and spend to improve return.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Containing both Skills & Proficiency and My Capabilities formatted identically with progress bars) -->
+    <section id="about" class="bg-white py-24 border-t border-black reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="bg-[#FFF3CD] border border-black rounded-[32px] p-12 text-center relative shadow-sm">
+                    <div class="w-32 h-32 bg-white border border-black rounded-full mx-auto mb-6 flex items-center justify-center text-3xl font-extrabold tracking-tight shadow-sm">RP</div>
+                    <div class="inline-block bg-white border border-black px-5 py-2 rounded-full text-xs font-semibold shadow-sm">
+                        Available for Freelance
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hey! That's me.</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        I am Rozina, a multidisciplinary creative strategist and marketing manager based in the digital space. With a keen eye for aesthetics and a knack for innovative solutions, I thrive in the dynamic intersection of design and commercial strategy.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        My journey across three countries has been a testament to my unwavering passion for meticulously crafting meaningful user experiences and campaigns that drive measurable growth.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="max-w-5xl mx-auto mt-16">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4">Tools</h3>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+                    The platforms and software I use to plan, design and measure campaigns.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75 3 21h4.2l1.2-3.6h7.2L16.8 21H21L15 3.75H9Zm1.05 10.8L12 8.55l1.95 6H10.05Z"/></svg>
+                        Adobe Creative Suite
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M8.5 15.5c1-3 2-6 3.5-9 1.5 3 2.5 6 3.5 9"/></svg>
+                        Canva
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+                        Google Analytics
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg>
+                        Google Ads
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M6 12h12M12 6c2.5 2 2.5 10 0 12M12 6c-2.5 2-2.5 10 0 12"/></svg>
+                        WordPress
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path stroke-linecap="round" d="M8 8h8M8 12h8M8 16h4"/></svg>
+                        Elementor
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.97-3.4 8-7.2 8-11a8 8 0 1 0-16 0c0 3.8 3.03 7.6 8 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        HubSpot
+                    </span>
+                </div>
+            </div>
+
+            <!-- My Capabilities Section: capsule badges -->
+            <div class="max-w-5xl mx-auto mt-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4">My capabilities</h3>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+                    The services I offer are meticulously crafted and tailored to cater specifically to your <span class="font-semibold text-gray-900">unique needs</span> and <span class="font-semibold text-gray-900">requirements</span>.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m12 2 2.2 6.8H21l-5.6 4.1 2.2 6.9L12 15.8 6.4 19.8l2.2-6.9L3 8.8h6.8L12 2Z"/></svg>
+                        Brand &amp; Campaign Strategy
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17 9 11l4 4L21 6M21 6h-5M21 6v5"/></svg>
+                        Marketing Strategy
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v12H8l-4 4V4Z"/><path stroke-linecap="round" d="M8 9h8M8 12h5"/></svg>
+                        Email &amp; Social Marketing
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path stroke-linecap="round" d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+                        Digital &amp; Paid Media
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+                        AI-Enhanced Workflows
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m12 3 2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3Z"/></svg>
+                        Illustration
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-black rounded-full px-6 py-3 text-sm font-semibold shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M3 9h18M8 21h8"/></svg>
+                        Web Development
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Section -->
+    <section id="writing" class="py-24 max-w-6xl mx-auto px-6 reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">From the blog</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">
+                Here I share my insights, offering valuable tips, and experience.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="h-48 bg-amber-50 border-b border-black p-6 flex items-center justify-center text-gray-400 font-medium">Article Thumbnail</div>
+                <div class="p-8">
+                    <small class="text-xs font-semibold text-gray-500 block mb-2">Planned topic &bull; LinkedIn</small>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Inside a media plan: what actually drove a 30% sales lift.</h3>
+                    <p class="text-sm text-gray-600 mb-6">A campaign breakdown from the Tang work: objective, channels, and what I'd repeat.</p>
+                    <a href="#" class="font-semibold text-sm text-purple-600 hover:underline">Read on LinkedIn →</a>
+                </div>
+            </div>
+
+            <div class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="h-48 bg-purple-50 border-b border-black p-6 flex items-center justify-center text-gray-400 font-medium">Article Thumbnail</div>
+                <div class="p-8">
+                    <small class="text-xs font-semibold text-gray-500 block mb-2">Planned topic &bull; LinkedIn</small>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Using AI in a creative workflow without losing the craft.</h3>
+                    <p class="text-sm text-gray-600 mb-6">Where AI tools speed things up, and where human judgment still decides.</p>
+                    <a href="#" class="font-semibold text-sm text-purple-600 hover:underline">Read on LinkedIn →</a>
+                </div>
+            </div>
+
+            <div class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="h-48 bg-emerald-50 border-b border-black p-6 flex items-center justify-center text-gray-400 font-medium">Article Thumbnail</div>
+                <div class="p-8">
+                    <small class="text-xs font-semibold text-gray-500 block mb-2">Planned topic &bull; LinkedIn</small>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Templates that keep a brand consistent at scale.</h3>
+                    <p class="text-sm text-gray-600 mb-6">How editable systems let non-designers produce on-brand work.</p>
+                    <a href="#" class="font-semibold text-sm text-purple-600 hover:underline">Read on LinkedIn →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-[#191919] text-white py-24 px-6 reveal">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">Let's talk about your brand.</h2>
+            <p class="text-gray-400 max-w-lg mx-auto mb-8">
+                Open to marketing and creative strategy roles, and select freelance projects. Let's create something great together.
+            </p>
+            
+            <a href="mailto:punjwanirozina@gmail.com" class="inline-block bg-white text-gray-900 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition mb-8">
+                Get in touch
+            </a>
+
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-300 mb-8">
+                <a href="mailto:punjwanirozina@gmail.com" class="hover:underline">punjwanirozina@gmail.com</a>
+                <a href="https://www.linkedin.com/in/rozinapunjwani/" target="_blank" class="hover:underline">LinkedIn</a>
+                <a href="#" class="hover:underline">Download résumé</a>
+            </div>
+            
+            <p class="font-bold text-[#D9826B] text-lg mb-16">and make it real together</p>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Rozina Punjwani.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#work" class="hover:text-white transition">Portfolio</a>
+                    <a href="#about" class="hover:text-white transition">About me</a>
+                    <a href="#writing" class="hover:text-white transition">Blog</a>
+                    <a href="#home" class="hover:text-white transition">Back to top ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for animations -->
+    <script>
+        // Scroll reveal observer
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Animated hero text cycling
+        const words = ["grow", "convert", "stick", "tell stories", "scale"];
+        let wi = 0;
+        const cw = document.getElementById("cycle-target");
+        if (cw && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            setInterval(() => {
+                cw.classList.add("out");
+                setTimeout(() => {
+                    wi = (wi + 1) % words.length;
+                    cw.textContent = words[wi];
+                    cw.classList.remove("out");
+                }, 250);
+            }, 2200);
+        }
+    </script>
+</body>
+</html>
