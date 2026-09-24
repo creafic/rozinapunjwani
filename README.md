@@ -1,2 +1,2 @@
-# rozina-portfolio
+# rozinapunjwani
 Portfolio website for Rozina Punjwani — Creative Strategist, Marketer, Brand Storyteller
