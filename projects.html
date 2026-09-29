@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected Works & Projects — Rozina Punjwani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .project-card { cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+        .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); border-color: #7c3aed; }
+        .project-card .view-hint { opacity: 0; transition: opacity 0.2s ease; }
+        .project-card:hover .view-hint { opacity: 1; }
+        .service-chip { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .service-chip:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+
+        /* Lightbox */
+        #lightbox { position: fixed; inset: 0; background: rgba(10,10,14,0.92); z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; }
+        #lightbox.open { display: flex; }
+        #lightbox-inner { max-width: 1000px; width: 100%; max-height: 92vh; display: flex; flex-direction: column; align-items: center; }
+        #lightbox-imgwrap { position: relative; width: 100%; display: flex; align-items: center; justify-content: center; }
+        #lightbox img { max-height: 72vh; max-width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); background: #fff; }
+        #lightbox-close { position: absolute; top: -8px; right: -8px; background: white; color: black; width: 40px; height: 40px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 800; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
+        #lightbox-prev, #lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); color: black; width: 44px; height: 44px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 800; cursor: pointer; font-size: 20px; user-select: none; }
+        #lightbox-prev { left: 8px; }
+        #lightbox-next { right: 8px; }
+        #lightbox-caption { color: white; text-align: center; margin-top: 18px; }
+        #lightbox-caption h4 { font-size: 1.15rem; font-weight: 800; }
+        #lightbox-caption p { font-size: 0.85rem; color: #c9c9d1; margin-top: 4px; }
+        #lightbox-counter { font-size: 0.75rem; color: #9a9aa3; margin-top: 6px; }
+
+        /* Case Study Modal */
+        #casestudy { position: fixed; inset: 0; background: rgba(10,10,14,0.85); z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px; }
+        #casestudy.open { display: flex; }
+        #cs-card { background: #fff; border-radius: 28px; max-width: 640px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+        #cs-close { position: absolute; top: 16px; right: 16px; background: #111; color: white; width: 36px; height: 36px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 800; cursor: pointer; z-index: 2; }
+        #cs-hero { width: 100%; height: 220px; object-fit: cover; border-radius: 28px 28px 0 0; background: #f3f4f6; }
+        #cs-body { padding: 32px; }
+        #cs-tag { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #7c3aed; }
+        #cs-title { font-size: 1.5rem; font-weight: 800; color: #111; margin: 6px 0 4px; }
+        #cs-role { font-size: 0.8rem; color: #6b7280; margin-bottom: 18px; font-style: italic; }
+        .cs-block { margin-bottom: 16px; }
+        .cs-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #7c3aed; margin-bottom: 4px; }
+        .cs-text { font-size: 0.85rem; color: #374151; line-height: 1.6; }
+        #cs-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #eee; }
+        #cs-tags span { font-size: 0.7rem; font-weight: 700; background: #f3f0ff; border: 1px solid rgba(0,0,0,0.1); padding: 5px 12px; border-radius: 999px; }
+        #cs-link { display: inline-block; margin-top: 16px; font-size: 0.8rem; font-weight: 700; color: #7c3aed; text-decoration: underline; }
+    </style>
+</head>
+<body class="bg-[#EAE6F8] text-gray-900 antialiased selection:bg-purple-200">
+
+    <!-- Header Navigation -->
+    <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
+        <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-full px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="assets/img/logo.png" alt="Creafic Logo" class="h-8 object-contain">
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+                <a href="index.html" class="hover:text-black transition">Home</a>
+                <a href="projects.html" class="text-black font-bold transition">Projects</a>
+                <a href="index.html#about" class="hover:text-black transition">About</a>
+                <a href="index.html#process" class="hover:text-black transition">Process</a>
+                <a href="blog.html" class="hover:text-black transition">Blog</a>
+                <a href="contact.html" class="hover:text-black transition">Contact</a>
+            </div>
+            <div>
+                <a href="contact.html" class="bg-[#3F5560] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5B7480] transition-all shadow-sm">Résumé</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Selected Works Header -->
+    <section class="max-w-5xl mx-auto px-6 pt-12 pb-16 text-center reveal">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4">My selected works &amp; projects</h1>
+        <p class="max-w-2xl mx-auto text-base md:text-lg text-gray-600 leading-relaxed">A comprehensive showcase of digital strategy, multi-channel marketing campaigns, brand identity systems, and impactful graphic design initiatives.</p>
+    </section>
+
+    <!-- SECTION 1: Strategic Marketing -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 reveal">
+        <div class="border-b border-black/20 pb-4 mb-10 flex items-center justify-between">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Strategic Marketing &amp; Campaigns</h2>
+            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-white border border-black rounded-full">Core Expertise</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('website-strategy')">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-2 block">Web Redesign &amp; UX</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Website Design &amp; Strategy</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Led complete website redesign initiatives of <strong class="text-gray-900">A1dynamics.com</strong> and <strong class="text-gray-900">Sikyuen.mu</strong> to drastically boost user engagement, modern architecture, and functionality.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                    <span class="text-xs bg-purple-50 border border-black/10 px-3 py-1 rounded-full font-medium">UX/UI Architecture</span>
+                    <span class="text-xs bg-purple-50 border border-black/10 px-3 py-1 rounded-full font-medium">WordPress &amp; Elementor</span>
+                </div>
+                <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('tang')">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-pink-600 mb-2 block">FMCG &amp; Media Planning</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Mondelez (Tang &amp; Cadbury) Campaigns</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Managed integrated marketing strategies, driving a remarkable <strong class="text-gray-900 underline">30% sales increase</strong> for Tang through precision-targeted media optimization.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                    <span class="text-xs bg-pink-50 border border-black/10 px-3 py-1 rounded-full font-medium">30% Sales Lift</span>
+                    <span class="text-xs bg-pink-50 border border-black/10 px-3 py-1 rounded-full font-medium">Media Planning</span>
+                </div>
+                <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('alcatel')">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2 block">Brand Launch &amp; Retail</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Alcatel Mobile Brand Launch</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Handled comprehensive market-entry creative planning and positioning strategies to secure a powerful, high-impact Q1 retail rollout.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                    <span class="text-xs bg-blue-50 border border-black/10 px-3 py-1 rounded-full font-medium">Go-To-Market</span>
+                    <span class="text-xs bg-blue-50 border border-black/10 px-3 py-1 rounded-full font-medium">Retail Rollout</span>
+                </div>
+                <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('cadbury')">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2 block">Digital Innovation &amp; Buying</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Cadbury Digital Innovation</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Spearheaded advanced digital ideation and media buying strategies to drastically improve campaign reach efficiency and consumer conversion.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                    <span class="text-xs bg-emerald-50 border border-black/10 px-3 py-1 rounded-full font-medium">Media Buying</span>
+                    <span class="text-xs bg-emerald-50 border border-black/10 px-3 py-1 rounded-full font-medium">Digital Ideation</span>
+                </div>
+                <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Graphic Design -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 reveal">
+        <div class="border-b border-black/20 pb-4 mb-10 flex items-center justify-between">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Graphic Design &amp; Client Projects</h2>
+            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-white border border-black rounded-full">Branding &amp; Print</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('florist')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">SN Florals Boutique</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Floral Boutique Identity</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Custom boutique designs utilizing soft, natural palettes to capture the organic vibe of the store.</p>
+                </div>
+                <div class="bg-pink-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Unique Logo, Business Cards, Event Tags</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('clothing-brand')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Salima Nizar (Entrepreneur)</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Start-Up Clothing Brand</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Emphasized brand name prominence with bespoke styling cues tailored to match the entrepreneur's distinct aesthetic.</p>
+                </div>
+                <div class="bg-purple-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Logo Creation &amp; Visual Identity</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('nightwear')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">BedHeads Brand</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fashion Nightwear Line</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Reflected a fashion-forward, comfortable nightwear essence using product-related conceptual elements.</p>
+                </div>
+                <div class="bg-blue-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Distinctive Logo &amp; Brand System</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('musical-night')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Aga Khan University Hospital</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Musical Night Event</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Unified event branding highlighting classic musical hits for a memorable evening experience.</p>
+                </div>
+                <div class="bg-amber-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Poster, Wall Display, Tickets, Web Banner</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('makeup-artist')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Beauty Professional</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Makeup Artist Identity</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Corporate stationery illustrating high-end service offerings and the refined nature of the beauty brand.</p>
+                </div>
+                <div class="bg-rose-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Logo, Business Card, Letterhead</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('aku-sportshop')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">AKU Launch</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AKU Sports Shop Launch</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Dynamic retail graphics focused on fitness enthusiasts while driving high anticipation for the shop launch.</p>
+                </div>
+                <div class="bg-emerald-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Poster, Standee, Price Tag</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Social Causes -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 reveal">
+        <div class="border-b border-black/20 pb-4 mb-10 flex items-center justify-between">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Social Causes &amp; Community Projects</h2>
+            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-white border border-black rounded-full">Impact Design</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('red-cross')">
+                <div>
+                    <span class="text-xs font-semibold text-red-600 uppercase tracking-wider block mb-1">Red Cross Red Crescent Climate Centre, Netherlands</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Red Cross Heat Wave Campaign</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Impactful print &amp; social posters for a heatwave awareness campaign across South Asia and Sub-Saharan Africa, depicting city scenes and everyday people to highlight who is most at risk from extreme heat.</p>
+                </div>
+                <div class="bg-red-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Print Posters &amp; Social Media Poster Series</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('suicide-prevention')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Mental Health Awareness</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Suicide Prevention Campaign</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Delicate, empathetic posters conveying messages from dual perspectives: individuals struggling and those supporting victims.</p>
+                </div>
+                <div class="bg-gray-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Impactful Campaign Posters</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('kalakaar')">
+                <div>
+                    <span class="text-xs font-semibold text-purple-600 uppercase tracking-wider block mb-1">Kalakaar Initiative</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Social Cause Clothing Brand</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Working with underprivileged artisans to market skills online. Coloured strokes represent skilled workers, using native language for inclusivity.</p>
+                </div>
+                <div class="bg-purple-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Brand Logo &amp; Identity System</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('baithak')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Otaaq-e-Nafs · Therapy Solutions</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Baithak Chat Sessions</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Visuals depicting actual lounge environments to convey psychological comfort and warmth for attendees.</p>
+                </div>
+                <div class="bg-amber-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Standee, Participation Certificates</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('teachers-training')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Local Education Board for Kharadar</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Teachers Training Program</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Professional grooming and educational branding for young professionals entering teaching careers.</p>
+                </div>
+                <div class="bg-blue-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Poster, Standee, WhatsApp Post</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('camporall')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">AKYSBP District Karachi</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Camporall 2019 Jurisdiction Camp</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Highlighting outdoor experiences, campfire nights, tent living, and community connection.</p>
+                </div>
+                <div class="bg-emerald-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Billboard, Invitation Card</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('spelling-bee')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Clifton YSB &amp; Clifton Library</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Spelling Bee Competition</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Playful, bee-themed branding to promote a community spelling competition for young readers.</p>
+                </div>
+                <div class="bg-yellow-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Banner, Standee</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('book-fair')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Ismaili Community Event</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Book Fair Promotion</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Vibrant, illustrative poster promoting a community book fair featuring faith &amp; literary titles.</p>
+                </div>
+                <div class="bg-cyan-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Event Poster</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('creative-writing')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Aga Khan Local Education Board for Kharadar</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Creative Writing Classes Ad</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Bright, imaginative flyer designs promoting creative writing classes for young students.</p>
+                </div>
+                <div class="bg-orange-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Promotional Flyers</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('world-diabetes-day')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Health Awareness</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">World Diabetes Day Campaign</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">A concept-driven poster series using everyday food and objects to deliver sharp, memorable diabetes-awareness messaging.</p>
+                </div>
+                <div class="bg-yellow-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Concept Poster Series</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('book-day')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">NIST</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">World Book Day Promotion</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Evocative, literary-themed visuals inviting the community to celebrate World Book Day.</p>
+                </div>
+                <div class="bg-amber-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Event Promotional Posters</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('turkey-trip')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">AKYSBP &amp; AK Social Welfare Board for Pakistan</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Turkey Trip Promotional Standee</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Travel-inspired standee designs promoting a group trip package, balancing destination imagery with clear package details.</p>
+                </div>
+                <div class="bg-sky-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Promotional Standees</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('akdn-template')">
+                <div>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">Aga Khan Development Network for Pakistan</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AKDN Institutions Template System</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Standardized template system across five regulatory boards (Health, Education, Economic Planning, Youth &amp; Sports) with distinct color codes and symbols, e.g., the red cross for Health.</p>
+                </div>
+                <div class="bg-purple-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Billboard, Roll-up Banner, Poster, Cover Card</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+            <div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" onclick="openGallery('cancer-awareness')">
+                <div>
+                    <span class="text-xs font-semibold text-pink-600 uppercase tracking-wider block mb-1">Local Health Board for Kharadar &amp; Cancer Support Team</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Breast Cancer Awareness Month</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">Dual messaging "Her Fight Is My Fight" campaign: women's designs highlighting proactive health management; men's designs emphasizing household support systems.</p>
+                </div>
+                <div class="bg-pink-50 border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">Roll-up Banner Campaigns (Men &amp; Women focus)</p>
+                    <span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Services Offered -->
+    <section class="max-w-6xl mx-auto px-6 pb-24 reveal">
+        <div class="bg-white border border-black rounded-[32px] p-8 md:p-12 shadow-sm text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Graphic Design Services Offered</h3>
+            <p class="text-gray-600 max-w-xl mx-auto mb-8 text-sm">Specialized creative execution tailored to elevate brand identities and engagement across digital and print channels.</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="service-chip bg-purple-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-illustrations')">Vector Illustrations</span>
+                <span class="service-chip bg-pink-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-caricature')">Caricature</span>
+                <span class="service-chip bg-blue-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-logo')">Logo Designs</span>
+                <span class="service-chip bg-emerald-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-corporate')">Corporate Identity</span>
+                <span class="service-chip bg-amber-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-poster')">Poster Designs</span>
+                <span class="service-chip bg-cyan-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-brochure')">Brochure Designs</span>
+                <span class="service-chip bg-rose-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-businesscard')">Business Card Designs</span>
+            </div>
+            <p class="text-xs text-gray-400 mt-6">Tap any service to view sample work</p>
+        </div>
+    </section>
+
+    <!-- Case Study Modal -->
+    <div id="casestudy" onclick="if(event.target===this) closeCaseStudy()">
+        <div id="cs-card">
+            <div id="cs-close" onclick="closeCaseStudy()">✕</div>
+            <img id="cs-hero" src="" alt="">
+            <div id="cs-body">
+                <span id="cs-tag"></span>
+                <h3 id="cs-title"></h3>
+                <p id="cs-role"></p>
+                <div class="cs-block"><div class="cs-label">The Challenge</div><p class="cs-text" id="cs-challenge"></p></div>
+                <div class="cs-block"><div class="cs-label">The Strategy</div><p class="cs-text" id="cs-strategy"></p></div>
+                <div class="cs-block"><div class="cs-label">The Impact</div><p class="cs-text" id="cs-impact"></p></div>
+                <a id="cs-link" href="#" target="_blank" style="display:none;">Visit live site →</a>
+                <div id="cs-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" onclick="if(event.target===this) closeGallery()">
+        <div id="lightbox-inner">
+            <div id="lightbox-imgwrap">
+                <div id="lightbox-close" onclick="closeGallery()">✕</div>
+                <div id="lightbox-prev" onclick="navGallery(-1)">‹</div>
+                <img id="lightbox-img" src="" alt="">
+                <div id="lightbox-next" onclick="navGallery(1)">›</div>
+            </div>
+            <div id="lightbox-caption">
+                <h4 id="lightbox-title"></h4>
+                <p id="lightbox-sub"></p>
+                <div id="lightbox-counter"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#191919] text-white py-24 px-6 reveal">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">Let's talk about your brand.</h2>
+            <p class="text-gray-400 max-w-lg mx-auto mb-8">Let's create something great together.</p>
+            <a href="mailto:punjwanirozina@gmail.com" class="inline-block bg-white text-gray-900 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition mb-8">Get in touch</a>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-300 mb-8">
+                <a href="mailto:punjwanirozina@gmail.com" class="hover:underline">punjwanirozina@gmail.com</a>
+                <a href="https://www.linkedin.com/in/rozinapunjwani/" target="_blank" class="hover:underline">LinkedIn</a>
+                <a href="contact.html" class="hover:underline">Download résumé</a>
+            </div>
+            <p class="font-bold text-[#D9826B] text-lg mb-16">and make it real together</p>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Rozina Punjwani.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="projects.html" class="hover:text-white transition">Portfolio</a>
+                    <a href="index.html#about" class="hover:text-white transition">About me</a>
+                    <a href="blog.html" class="hover:text-white transition">Blog</a>
+                    <a href="contact.html" class="hover:text-white transition">Contact</a>
+                    <a href="#" class="hover:text-white transition">Back to top ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+    <!-- Galleries -->
+    <script>
+        const GALLERIES = {
+            'florist': { title: 'Floral Boutique Identity', sub: 'SN Florals Boutique — Unique Logo, Business Cards & Event Tags', files: ['florist-1.png','florist-2.png','florist-3.png','florist-4.png'] },
+            'clothing-brand': { title: 'Start-Up Clothing Brand', sub: 'Salima Nizar — Logo Creation & Visual Identity', files: ['clothing-brand-1.png'] },
+            'nightwear': { title: 'Fashion Nightwear Line', sub: 'BedHeads Brand — Distinctive Logo & Brand System', files: ['nightwear-1.png'] },
+            'musical-night': { title: 'Musical Night Event', sub: 'Aga Khan University Hospital — Poster, Wall Display, Tickets & Web Banner', files: ['musical-night-1.png'] },
+            'makeup-artist': { title: 'Makeup Artist Identity', sub: 'Sarah — Logo, Business Card & Letterhead', files: ['makeup-artist-1.png'] },
+            'aku-sportshop': { title: 'AKU Sports Shop Launch', sub: 'Poster, Standee & Price Tag', files: ['aku-sportshop-1.png','aku-sportshop-2.png','aku-sportshop-3.png'] },
+            'red-cross': { title: 'Red Cross Heat Wave Campaign', sub: 'Red Cross Red Crescent Climate Centre, Netherlands — Print & Social Posters', files: ['red-cross-1.png','red-cross-2.png','red-cross-3.png','red-cross-4.png'] },
+            'suicide-prevention': { title: 'Suicide Prevention Campaign', sub: 'Mental Health Awareness — Impactful Campaign Posters', files: ['suicide-prevention-1.png','suicide-prevention-2.png','suicide-prevention-3.png'] },
+            'kalakaar': { title: 'Social Cause Clothing Brand', sub: 'Kalakaar Initiative — Brand Logo & Identity System', files: ['kalakaar-1.png'] },
+            'baithak': { title: 'Baithak Chat Sessions', sub: 'Otaaq-e-Nafs, Therapy Solutions — Standee Design', files: ['baithak-1.png'] },
+            'teachers-training': { title: 'Teachers Training Program', sub: 'Local Education Board for Kharadar — Poster, Standee & WhatsApp Post', files: ['teachers-training-1.png'] },
+            'camporall': { title: 'Camporall 2019 Jurisdiction Camp', sub: 'AKYSBP District Karachi — Billboard & Invitation Card', files: ['camporall-1.png','camporall-2.png'] },
+            'spelling-bee': { title: 'Spelling Bee Competition', sub: 'Clifton YSB & Clifton Library — Banner & Standee', files: ['spelling-bee-1.png','spelling-bee-2.png'] },
+            'book-fair': { title: 'Book Fair Promotion', sub: 'Community Event Poster', files: ['book-fair-1.png'] },
+            'creative-writing': { title: 'Creative Writing Classes Ad', sub: 'Aga Khan Local Education Board for Kharadar — Promotional Flyers', files: ['creative-writing-1.png','creative-writing-2.png'] },
+            'world-diabetes-day': { title: 'World Diabetes Day Campaign', sub: 'Concept Poster Series', files: ['world-diabetes-day-1.png','world-diabetes-day-2.png','world-diabetes-day-3.png','world-diabetes-day-4.png','world-diabetes-day-5.png'] },
+            'book-day': { title: 'World Book Day Promotion', sub: 'NIST — Event Promotional Posters', files: ['book-day-1.png','book-day-2.png'] },
+            'turkey-trip': { title: 'Turkey Trip Promotional Standee', sub: 'AKYSBP & AK Social Welfare Board for Pakistan', files: ['turkey-trip-1.png','turkey-trip-2.png','turkey-trip-3.png'] },
+            'akdn-template': { title: 'AKDN Institutions Template System', sub: 'Billboard, Roll-up Banner, Poster & Cover Card templates across five boards', files: ['akdn-template-1.png','akdn-template-2.png','akdn-template-3.png','akdn-template-4.png','akdn-template-5.png','akdn-template-6.png','akdn-template-7.png','akdn-template-8.png','akdn-template-9.png','akdn-template-10.png','akdn-template-11.png'] },
+            'cancer-awareness': { title: 'Breast Cancer Awareness Month', sub: 'Local Health Board for Kharadar & Cancer Support Team — "Her Fight Is My Fight"', files: ['cancer-awareness-1.png','cancer-awareness-2.png'] },
+            'svc-illustrations': { title: 'Vector Illustrations', sub: 'Character & icon illustration work built in Adobe Illustrator', files: ['svc-illustrations-1.png','svc-illustrations-2.png','svc-illustrations-3.png'] },
+            'svc-caricature': { title: 'Caricature', sub: 'Custom digital caricature portraits', files: ['svc-caricature-1.png','svc-caricature-2.png'] },
+            'svc-logo': { title: 'Logo Designs', sub: 'Brand mark concepts across industries', files: ['svc-logo-1.png','svc-logo-2.png','svc-logo-3.png'] },
+            'svc-corporate': { title: 'Corporate Identity', sub: 'Full stationery & brand identity systems', files: ['svc-corporate-1.png','svc-corporate-2.png'] },
+            'svc-poster': { title: 'Poster Designs', sub: 'Selected poster work from client & social-cause campaigns', files: ['svc-poster-1.png','svc-poster-2.png','svc-poster-3.png','svc-poster-4.png'] },
+            'svc-brochure': { title: 'Brochure Designs', sub: 'Tri-fold brochure layouts', files: ['svc-brochure-1.png','svc-brochure-2.png','svc-brochure-3.png'] },
+            'svc-businesscard': { title: 'Business Card Designs', sub: 'Creafic — Design Solutions', files: ['svc-businesscard-1.png','svc-businesscard-2.png'] }
+        };
+
+        let currentGallery = null;
+        let currentIndex = 0;
+
+        function openGallery(key) {
+            const g = GALLERIES[key];
+            if (!g) return;
+            currentGallery = key;
+            currentIndex = 0;
+            renderLightboxImage();
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+            currentGallery = null;
+        }
+
+        function navGallery(dir) {
+            if (!currentGallery) return;
+            const g = GALLERIES[currentGallery];
+            currentIndex = (currentIndex + dir + g.files.length) % g.files.length;
+            renderLightboxImage();
+        }
+
+        function renderLightboxImage() {
+            const g = GALLERIES[currentGallery];
+            const imgEl = document.getElementById('lightbox-img');
+            imgEl.src = 'assets/img/' + g.files[currentIndex];
+            imgEl.alt = g.title;
+            document.getElementById('lightbox-title').textContent = g.title;
+            document.getElementById('lightbox-sub').textContent = g.sub;
+            document.getElementById('lightbox-counter').textContent = g.files.length > 1 ? (currentIndex + 1) + ' / ' + g.files.length : '';
+            const showNav = g.files.length > 1;
+            document.getElementById('lightbox-prev').style.display = showNav ? 'flex' : 'none';
+            document.getElementById('lightbox-next').style.display = showNav ? 'flex' : 'none';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (!currentGallery) return;
+            if (e.key === 'Escape') closeGallery();
+            if (e.key === 'ArrowLeft') navGallery(-1);
+            if (e.key === 'ArrowRight') navGallery(1);
+        });
+    </script>
+
+    <!-- Case Studies -->
+    <script>
+        const CASE_STUDIES = {
+            'website-strategy': {
+                tag: 'Web Redesign & UX',
+                title: 'Website Design & Strategy',
+                role: 'My role: Marketing Specialist — proposed the design & navigation changes, collaborated with the development team, and later learned to implement updates directly in WordPress & Elementor.',
+                challenge: 'Both A1dynamics.com and Sikyuen.mu needed clearer navigation, a more modern layout, and content structured around current service offerings to build credibility with visitors.',
+                strategy: 'Mapped out revised page flow and information architecture, worked closely with a developer to implement the structural changes, then progressively took over ongoing content and layout updates myself in WordPress/Elementor.',
+                impact: 'A more modern, professional site presentation with clearer navigation and improved user engagement across both properties.',
+                image: 'assets/img/a1dynamics-case.png',
+                imageFit: 'cover',
+                link: 'https://a1dynamics.com',
+                tags: ['UX/UI Architecture', 'WordPress & Elementor']
+            },
+            'tang': {
+                tag: 'FMCG · Media Planning',
+                title: 'Tang — Ramadan & Summer Campaign',
+                role: "My role: Media Planner, working through agency Starcom Pakistan on Mondelez's Tang account.",
+                challenge: "Standing out in a crowded powdered-beverage category during Ramadan and peak summer heat, and reaching Tang's core audience of housewives and mothers with relevant messaging.",
+                strategy: 'Built and executed precision-targeted media plans across online display and social, timed to Ramadan and summer seasonal moments to maximize relevance and reach.',
+                impact: 'A 30% sales increase for Tang, driven by tighter audience targeting and seasonal media optimization.',
+                image: 'assets/img/tang-case.png',
+                imageFit: 'contain',
+                tags: ['30% Sales Lift', 'Media Planning']
+            },
+            'cadbury': {
+                tag: 'Digital Innovation & Buying',
+                title: 'Cadbury Digital Innovation',
+                role: "My role: Media Planner/Buyer on Mondelez's Cadbury Dairy Milk account, working alongside the brand's digital creative agency.",
+                challenge: "Extending Cadbury Dairy Milk's presence into always-on, digitally native engagement — particularly around Ramadan and Eid seasonal moments.",
+                strategy: 'Planned and bought digital media to support always-on social content and seasonal campaigns, focusing spend on Facebook-led engagement to maximize reach efficiency.',
+                impact: 'Stronger digital reach and engagement for Cadbury Dairy Milk during key seasonal windows.',
+                image: 'assets/img/cadbury-main.jpg',
+                imageFit: 'contain',
+                tags: ['Media Buying', 'Digital Ideation']
+            },
+            'alcatel': {
+                tag: 'Brand Launch & Retail',
+                title: 'Alcatel Mobile Brand Launch',
+                role: 'My role: Media Planner via Manhattan International (Omnicom Media Group Pakistan), in partnership with ADCOMM DMCC, Dubai.',
+                challenge: 'Building retail visibility and awareness for Alcatel as it entered a competitive Pakistani mobile market in 2016.',
+                strategy: 'Developed market-entry media and positioning plans synchronized with a Q1 retail rollout, coordinating across the Pakistan and regional agency partners.',
+                impact: "A high-impact, well-timed retail launch that supported Alcatel's market entry in Pakistan.",
+                image: 'assets/img/alcatel-logo.png',
+                imageFit: 'contain',
+                tags: ['Go-To-Market', 'Retail Rollout']
+            }
+        };
+
+        function openCaseStudy(key) {
+            const c = CASE_STUDIES[key];
+            if (!c) return;
+            document.getElementById('cs-tag').textContent = c.tag;
+            document.getElementById('cs-title').textContent = c.title;
+            document.getElementById('cs-role').textContent = c.role;
+            document.getElementById('cs-challenge').textContent = c.challenge;
+            document.getElementById('cs-strategy').textContent = c.strategy;
+            document.getElementById('cs-impact').textContent = c.impact;
+            const hero = document.getElementById('cs-hero');
+            hero.src = c.image;
+            hero.alt = c.title;
+            hero.className = c.imageFit === 'contain' ? 'contain' : '';
+            const link = document.getElementById('cs-link');
+            if (c.link) { link.href = c.link; link.style.display = 'inline-block'; } else { link.style.display = 'none'; }
+            const tagsEl = document.getElementById('cs-tags');
+            tagsEl.innerHTML = '';
+            c.tags.forEach(t => { const span = document.createElement('span'); span.textContent = t; tagsEl.appendChild(span); });
+            document.getElementById('casestudy').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCaseStudy() {
+            document.getElementById('casestudy').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCaseStudy(); });
+    </script>
+</body>
+</html>
