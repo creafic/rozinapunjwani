@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Résumé — Rozina Punjwani</title>
+<meta name="description" content="Rozina Punjwani's résumé: 8+ years of marketing, media and design across Canada, the UAE and Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ===== Theme: change these to match your site exactly ===== */
+  :root{
+    --bg:#faf6f1;
+    --surface:#ffffff;
+    --ink:#1f1b2e;
+    --muted:#6b6678;
+    --accent:#e0533d;
+    --accent-2:#3b2f8f;
+    --line:#e8e1d8;
+    --radius:20px;
+    --shadow:0 10px 30px rgba(31,27,46,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14121c;--surface:#1d1a29;--ink:#f3eff8;--muted:#a49fb3;--line:#2c2839;
+      --accent:#ff7a63;--accent-2:#9d8cff;--shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  .eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h2{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin-bottom:10px}
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:34px}
+
+  .top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:.92rem;text-decoration:none;border:1.5px solid var(--ink);transition:.2s;cursor:pointer;background:none;color:var(--ink);font-family:inherit}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--ink);color:var(--bg)}
+  .btn.accent{background:var(--accent);border-color:var(--accent);color:#fff}
+
+  /* hero */
+  .hero{padding:36px 0 20px}
+  .hero h1{font-size:clamp(2.2rem,6.5vw,4.4rem);line-height:1.04;max-width:16ch}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{margin-top:20px;color:var(--muted);max-width:62ch;font-size:1.06rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .chip{padding:7px 14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:.85rem;font-weight:500;text-decoration:none}
+  a.chip:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* map */
+  .map-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .map-card svg{width:100%;height:auto;display:block}
+  .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .legend div{border-top:2px solid var(--line);padding-top:10px;font-size:.9rem;color:var(--muted)}
+  .legend b{display:block;color:var(--ink);font-size:1rem}
+  .arc{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:6 7;animation:dash 2.4s linear infinite}
+  .arc.b{stroke:var(--accent-2)}
+  @keyframes dash{to{stroke-dashoffset:-26}}
+  .pulse{transform-origin:center;transform-box:fill-box;animation:pulse 2.2s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(3.2);opacity:0}}
+
+  /* timeline (vertical, newest first) */
+  .timeline{position:relative;display:grid;gap:18px;padding-left:34px}
+  .timeline::before{content:"";position:absolute;top:8px;bottom:8px;left:9px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+  .step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
+  .step::before{content:"";position:absolute;top:28px;left:-33px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:4px solid var(--accent)}
+  .step .meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .tag{padding:3px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:.72rem;letter-spacing:.08em}
+  .step h3{font-size:1.25rem;margin-top:6px}
+  .step .co{color:var(--accent-2);font-weight:600;font-size:.95rem}
+  .step .co small{color:var(--muted);font-weight:500}
+  .step ul{margin-top:12px;padding-left:18px;color:var(--muted);font-size:.93rem}
+  .step li{margin-bottom:5px}
+  .step li b{color:var(--ink);font-weight:600}
+  .step.now{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .step.now .meta,.step.now .co,.step.now .co small,.step.now ul,.step.now li b{color:var(--bg)}
+  .step.now ul{opacity:.85}
+  .step.now .tag{background:transparent;border-color:rgba(255,255,255,.35)}
+  .step.now::before{background:var(--accent);border-color:var(--bg)}
+  .more{margin-top:26px;font-size:.95rem;color:var(--muted)}
+  .more a{color:var(--accent);font-weight:600}
+
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pillar{padding:22px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line)}
+  .pillar h3{font-size:1.1rem;margin-bottom:4px}
+  .pillar p{color:var(--muted);font-size:.9rem}
+
+  /* education / certs */
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .card{padding:22px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .card .tag{display:inline-block;margin-bottom:8px}
+  .card h3{font-size:1.08rem}
+  .card p{color:var(--muted);font-size:.9rem;margin-top:2px}
+  .gpa{display:inline-block;margin-top:10px;font-weight:600;font-size:.85rem;color:var(--accent)}
+  .certs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .cert{padding:18px;border-radius:16px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent-2)}
+  .cert b{display:block;font-size:.95rem}
+  .cert span{color:var(--muted);font-size:.85rem}
+  .community{margin-top:16px;padding:18px 22px;border-radius:16px;border:1px dashed var(--line);color:var(--muted);font-size:.93rem}
+  .community b{color:var(--ink)}
+
+  .cta{text-align:center;background:var(--ink);color:var(--bg);border-radius:28px;padding:52px 24px}
+  .cta h2{margin-bottom:8px}
+  .cta p{opacity:.75;margin-bottom:24px}
+  .cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .cta .btn{border-color:var(--bg);color:var(--bg)}
+  .cta .btn.accent{border-color:var(--accent);color:#fff}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:.85rem;text-align:center}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:820px){
+    .pillars,.legend,.grid2,.certs{grid-template-columns:1fr}
+    section{padding:48px 0}
+    .step{padding:20px 18px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .arc,.pulse{animation:none}
+  }
+  @media print{
+    body{background:#fff;color:#000}
+    .top,.cta,.legend+*{display:none}
+    .reveal{opacity:1!important;transform:none!important}
+    section{padding:22px 0}
+    .step,.card,.cert,.pillar{box-shadow:none;break-inside:avoid}
+    .step.now{background:#fff;color:#000;border-color:#999}
+    .step.now .meta,.step.now .co,.step.now .co small,.step.now ul,.step.now li b{color:#000}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <a class="btn" href="index.html">← Back to site</a>
+    <button class="btn primary" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero reveal">
+    <div class="eyebrow">Résumé · Rozina Punjwani</div>
+    <h1>Anatomy of a <em>marketing leader.</em></h1>
+    <p>Strategic marketing leader with 8+ years of international experience across marketing, advertising, media and design. I scale brand equity, multi-channel campaigns and B2B/B2C revenue, turn consumer insights into high-performing creative, and optimize budgets to maximize ROI.</p>
+    <div class="chips">
+      <span class="chip">North York, ON</span>
+      <a class="chip" href="mailto:punjwanirozina@gmail.com">punjwanirozina@gmail.com</a>
+      <a class="chip" href="https://www.linkedin.com/in/rozinapunjwani/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="chip" href="projects.html">Portfolio</a>
+    </div>
+  </header>
+
+  <!-- MAP -->
+  <section id="footprint">
+    <div class="eyebrow reveal">Global footprint</div>
+    <h2 class="reveal">Three markets, one playbook</h2>
+    <p class="lead reveal">8+ years of work across Canada, the UAE and Pakistan, adapting strategy to local audiences while keeping the brand consistent.</p>
+    <div class="map-card reveal">
+      <svg viewBox="0 0 800 330" role="img" aria-label="Map connecting Canada, the UAE and Pakistan">
+        <defs>
+          <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.6" fill="var(--line)"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="800" height="330" rx="14" fill="url(#dots)"/>
+        <path class="arc"   d="M120 125 Q 400 -30 668 238"/>
+        <path class="arc b" d="M668 238 Q 700 200 728 238"/>
+        <circle class="pulse" cx="120" cy="125" r="8" fill="var(--accent)"/>
+        <circle cx="120" cy="125" r="9" fill="var(--accent)" stroke="var(--surface)" stroke-width="3"/>
+        <text x="120" y="98" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="20" fill="var(--ink)">Canada</text>
+        <circle class="pulse" cx="668" cy="238" r="8" fill="var(--accent-2)"/>
+        <circle cx="668" cy="238" r="9" fill="var(--accent-2)" stroke="var(--surface)" stroke-width="3"/>
+        <text x="660" y="280" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="20" fill="var(--ink)">UAE</text>
+        <circle class="pulse" cx="728" cy="238" r="8" fill="var(--accent)"/>
+        <circle cx="728" cy="238" r="9" fill="var(--accent)" stroke="var(--surface)" stroke-width="3"/>
+        <text x="736" y="206" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="20" fill="var(--ink)">Pakistan</text>
+      </svg>
+      <div class="legend">
+        <div><b>Canada</b>Mini Moes · A1 Dynamics</div>
+        <div><b>UAE</b>ADCOMM DMCC · regional campaigns</div>
+        <div><b>Pakistan</b>Starcom · Omnicom · Grand Insight · Excellencia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="path">
+    <div class="eyebrow reveal">Career pathway</div>
+    <h2 class="reveal">From agency floor to brand leadership</h2>
+    <p class="lead reveal">Global networks sharpened the craft; hands-on brand ownership put it to work.</p>
+    <div class="timeline">
+
+      <div class="step now reveal">
+        <div class="meta"><span>Mar 2026 – Present</span><span class="tag">Canada</span></div>
+        <h3>Marketing &amp; Advertising Manager</h3>
+        <div class="co">Mini Moes</div>
+        <ul>
+          <li>Direct end-to-end multi-channel advertising campaigns to accelerate brand awareness, customer acquisition and store growth.</li>
+          <li>Spearhead full-lifecycle campaign management, using attribution tools and analytics to optimize ad spend and maximize ROAS.</li>
+          <li>Oversee marketing budgets, ad serving and ad trafficking across programmatic and social platforms.</li>
+        </ul>
+      </div>
+
+      <div class="step reveal">
+        <div class="meta"><span>Oct 2024 – Mar 2025</span><span class="tag">Canada</span></div>
+        <h3>Marketing Specialist</h3>
+        <div class="co">A1 Dynamics Ltd.</div>
+        <ul>
+          <li>Developed and executed B2B demand generation and Go-To-Market frameworks to accelerate partner channel growth.</li>
+          <li>Forged strategic alliances with industry leaders (e.g., LS Central), backed by market research.</li>
+          <li>Led the website redesign and UX architecture overhaul: <b>+40% organic traffic</b> and shorter sales cycles.</li>
+        </ul>
+      </div>
+
+      <div class="step reveal">
+        <div class="meta"><span>Feb 2021 – Aug 2022</span><span class="tag">Pakistan</span></div>
+        <h3>Graphic Designer &amp; Content Developer</h3>
+        <div class="co">Excellencia Learning</div>
+        <ul>
+          <li>Used consumer insights to design branded educational content: <b>+25% active learner engagement</b>.</li>
+          <li>Aligned learning materials cross-functionally with K-8 requirements and Australian educational standards.</li>
+        </ul>
+      </div>
+
+      <div class="step reveal">
+        <div class="meta"><span>Feb 2018 – Jan 2021</span><span class="tag">Pakistan</span></div>
+        <h3>Freelance Graphic Designer</h3>
+        <div class="co">Self-employed</div>
+        <ul>
+          <li>Delivered graphic design, brand identities, packaging ecosystems and multi-channel campaigns for a diverse portfolio.</li>
+          <li>Directed creative execution for high-visibility public welfare and awareness campaigns.</li>
+        </ul>
+      </div>
+
+      <div class="step reveal">
+        <div class="meta"><span>Apr 2017 – Jan 2018</span><span class="tag">Pakistan</span></div>
+        <h3>Assistant Marketing Manager</h3>
+        <div class="co">Grand Insight</div>
+        <ul>
+          <li>Directed quarterly marketing strategy and deployed <b>8 multi-channel campaigns</b> to grow market share for e-commerce and auto-parts lines.</li>
+        </ul>
+      </div>
+
+      <div class="step reveal">
+        <div class="meta"><span>Feb 2016 – Mar 2017</span><span class="tag">UAE</span></div>
+        <h3>Media Executive</h3>
+        <div class="co">ADCOMM DMCC</div>
+        <ul>
+          <li>Partnered with enterprise clients to architect annual media frameworks, manage budgets and build long-term relationships.</li>
+          <li>Planned and executed the retail launch of Alcatel Mobile (TV and radio), capturing an estimated <b>45%+ share of voice</b>.</li>
+        </ul>
+      </div>
+
+      <div class="step reveal">
+        <div class="meta"><span>Mar 2015 – Sep 2015</span><span class="tag">Pakistan</span></div>
+        <h3>Account Executive</h3>
+        <div class="co">Manhattan International Pvt. Ltd. <small>· Omnicom Media Group</small></div>
+        <ul>
+          <li>Acted as strategic liaison between high-profile automotive and banking clients and internal creative, media and production teams.</li>
+          <li>Synchronized large-scale, multi-channel rollouts across print, TV and radio.</li>
+        </ul>
+      </div>
+
+      <div class="step reveal">
+        <div class="meta"><span>May 2014 – Feb 2015</span><span class="tag">Pakistan</span></div>
+        <h3>Associate Media Planner</h3>
+        <div class="co">Brainchild Communications <small>· Starcom Worldwide</small></div>
+        <ul>
+          <li>Managed global FMCG portfolios, translating business strategy into media plans that delivered a <b>30% sales uplift</b>.</li>
+          <li>Delivered strategic briefings and performance analytics directly to executive stakeholders.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="more reveal">Campaign case studies (Tang, Cadbury, A1 Dynamics, Red Cross, Alcatel): <a href="projects.html">see the portfolio →</a></p>
+  </section>
+
+  <!-- PILLARS -->
+  <section id="pillars">
+    <div class="eyebrow reveal">Core pillars</div>
+    <h2 class="reveal">What I bring to a team</h2>
+    <p class="lead reveal">&nbsp;</p>
+    <div class="pillars">
+      <div class="pillar reveal"><h3>B2B / B2C Strategy</h3><p>Objectives, audiences and messaging that hold up in both boardrooms and checkout pages.</p></div>
+      <div class="pillar reveal"><h3>Go-To-Market Planning</h3><p>Launch plans that connect media, retail and digital into one coordinated push.</p></div>
+      <div class="pillar reveal"><h3>UX Architecture</h3><p>Websites structured to guide visitors toward the next step, and rank while doing it.</p></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="eyebrow reveal">Education</div>
+    <h2 class="reveal">Learning across three countries</h2>
+    <p class="lead reveal">&nbsp;</p>
+    <div class="grid2">
+      <div class="card reveal"><span class="tag">Canada</span><h3>Diploma in Business Marketing</h3><p>Seneca Polytechnic</p><span class="gpa">CGPA 3.8 · Honors</span></div>
+      <div class="card reveal"><span class="tag">Pakistan</span><h3>Bachelor of Business Administration</h3><p>SZABIST</p><span class="gpa">CGPA 3.53 · Academic scholarship</span></div>
+      <div class="card reveal"><span class="tag">USA</span><h3>Graduate-Level Coursework (MBA)</h3><p>Indiana State University</p><span class="gpa">CGPA 4.0 · 100% scholarship &amp; graduate assistantship</span></div>
+      <div class="card reveal"><span class="tag">USA</span><h3>Undergraduate Marketing Studies</h3><p>Collin College</p><span class="gpa">CGPA 4.0</span></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="eyebrow reveal">Certifications</div>
+    <h2 class="reveal">Always current</h2>
+    <p class="lead reveal">&nbsp;</p>
+    <div class="certs">
+      <div class="cert reveal"><b>Career Essentials in Generative AI</b><span>Microsoft &amp; LinkedIn</span></div>
+      <div class="cert reveal"><b>Introduction to Generative AI</b><span>Google Cloud</span></div>
+      <div class="cert reveal"><b>Google Ads Display Certification</b><span>Google</span></div>
+      <div class="cert reveal"><b>Inbound Marketing Certification</b><span>HubSpot Academy</span></div>
+    </div>
+    <div class="community reveal"><b>Community service:</b> Girl Guides Association Pakistan, environmental &amp; community welfare initiatives.</div>
+  </section>
+
+  <section>
+    <div class="cta reveal">
+      <h2>Let's build something that grows.</h2>
+      <p>Open to conversations about brand, campaigns and growth.</p>
+      <div class="row">
+        <a class="btn accent" href="mailto:punjwanirozina@gmail.com">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/rozinapunjwani/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="projects.html">View portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Rozina Punjwani · <a href="index.html">Back to site</a></footer>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // make sure everything is visible when printing
+  window.addEventListener('beforeprint',()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')));
+</script>
+</body>
+</html>
