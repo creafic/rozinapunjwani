@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creafic – Design Solutions by Rozina Punjwani</title>
+    <meta name="description" content="Creafic – Design Solutions: an independent creative practice (2018–2021) delivering logo design, branding, print, digital, packaging design, and advertising. Founder & Creative Director: Rozina Punjwani.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .project-card { cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+        .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); border-color: #7c3aed; }
+        .project-card .view-hint { opacity: 0; transition: opacity 0.2s ease; }
+        .project-card:hover .view-hint { opacity: 1; }
+        .service-chip { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .service-chip:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+        .thumb { cursor: pointer; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .thumb:hover { transform: scale(1.03); border-color: #7c3aed; }
+        .masonry { columns: 2; column-gap: 16px; }
+        @media (min-width: 768px) { .masonry { columns: 4; } }
+        .masonry .thumb { break-inside: avoid; margin-bottom: 16px; display: block; }
+
+        /* Lightbox */
+        #lightbox { position: fixed; inset: 0; background: rgba(10,10,14,0.92); z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; }
+        #lightbox.open { display: flex; }
+        #lightbox-inner { max-width: 1000px; width: 100%; max-height: 92vh; display: flex; flex-direction: column; align-items: center; }
+        #lightbox-imgwrap { position: relative; width: 100%; display: flex; align-items: center; justify-content: center; }
+        #lightbox img { max-height: 72vh; max-width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); background: #fff; }
+        #lightbox-close { position: absolute; top: -8px; right: -8px; background: white; color: black; width: 40px; height: 40px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 800; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.3); z-index: 2; }
+        #lightbox-prev, #lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); color: black; width: 44px; height: 44px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 800; cursor: pointer; font-size: 20px; user-select: none; }
+        #lightbox-prev { left: 8px; }
+        #lightbox-next { right: 8px; }
+        #lightbox-caption { color: white; text-align: center; margin-top: 18px; }
+        #lightbox-caption h4 { font-size: 1.15rem; font-weight: 800; }
+        #lightbox-caption p { font-size: 0.85rem; color: #c9c9d1; margin-top: 4px; }
+        #lightbox-counter { font-size: 0.75rem; color: #9a9aa3; margin-top: 6px; }
+    </style>
+</head>
+<body class="bg-[#EAE6F8] text-gray-900 antialiased selection:bg-purple-200" id="top">
+
+    <!-- Header Navigation -->
+    <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
+        <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-full px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html"><img src="logo.png" alt="Rozina Punjwani logo" class="h-8 object-contain"></a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+                <a href="index.html" class="hover:text-black transition">Home</a>
+                <a href="projects.html" class="text-black font-bold transition">Projects</a>
+                <a href="index.html#about" class="hover:text-black transition">About</a>
+                <a href="index.html#process" class="hover:text-black transition">Process</a>
+                <a href="blog.html" class="hover:text-black transition">Blog</a>
+                <a href="contact.html" class="hover:text-black transition">Contact</a>
+            </div>
+            <div>
+                <a href="resume.html" target="_blank" rel="noopener" class="bg-[#3F5560] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5B7480] transition-all shadow-sm">Résumé</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="max-w-6xl mx-auto px-6 pt-10 pb-16 reveal">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-3 block">Independent Practice · Graphic Design &amp; Branding</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-5">Creafic – Design Solutions</h1>
+                <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-4">Directing end-to-end brand ecosystems, packaging design, and multi-channel marketing campaigns by <strong>Rozina Punjwani</strong>.</p>
+                <p class="text-sm text-gray-600 leading-relaxed">Leave it to us to bring your visions to life. Creafic provides a comprehensive range of design services that turn ideas from mere concept to reality.</p>
+            </div>
+            <div class="bg-white border border-black rounded-[32px] p-8 shadow-sm flex items-center justify-center">
+                <img src="https://static.wixstatic.com/media/b32a11_1f724738e7cb4ec892dd75009d56014a~mv2.png" alt="Creafic – Design Solutions by Rozina Punjwani" class="max-h-56 object-contain">
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 mt-10">
+            <div class="bg-white border border-black rounded-[24px] p-6 shadow-sm"><div class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">Role</div><p class="text-sm font-semibold">Founder &amp; Creative Director</p></div>
+            <div class="bg-white border border-black rounded-[24px] p-6 shadow-sm"><div class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">Timeline</div><p class="text-sm font-semibold">2018 – 2021</p></div>
+            <div class="bg-white border border-black rounded-[24px] p-6 shadow-sm"><div class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">Core Services</div><p class="text-sm font-semibold">Brand Identity, Packaging Architecture, Graphic Design &amp; Creative Direction</p></div>
+        </div>
+    </section>
+
+    <!-- INTRO / EXPLORE MY WORK -->
+    <section class="max-w-5xl mx-auto px-6 pb-20 reveal">
+        <div class="bg-white border border-black rounded-[32px] p-8 md:p-12 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-3 block">The Practice</span>
+            <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6">Explore my graphic design work</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">Creafic was an independent design practice built on one principle: creative work should solve a business problem, not just look good. From 2018 to 2021, I led every engagement from first brief to final delivery, producing brand identities, packaging, and campaign collateral across healthcare, nonprofit, education, retail, beauty, sports, and tourism.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">The work demanded more than design skill. It called for high-level client service, disciplined campaign execution, and creative leadership: turning objectives into concepts, holding timelines, and delivering assets that performed across print, digital, and in-market channels.</p>
+            <p class="text-gray-700 leading-relaxed mb-6">Below is a curated showcase of graphic design initiatives, client work, and community campaigns created under Creafic.</p>
+            <div class="flex flex-wrap gap-2 mb-8">
+                <span class="text-xs bg-purple-50 border border-black/10 px-3 py-1 rounded-full font-medium">Healthcare</span>
+                <span class="text-xs bg-pink-50 border border-black/10 px-3 py-1 rounded-full font-medium">Nonprofit</span>
+                <span class="text-xs bg-blue-50 border border-black/10 px-3 py-1 rounded-full font-medium">Education</span>
+                <span class="text-xs bg-emerald-50 border border-black/10 px-3 py-1 rounded-full font-medium">Retail</span>
+                <span class="text-xs bg-rose-50 border border-black/10 px-3 py-1 rounded-full font-medium">Beauty</span>
+                <span class="text-xs bg-amber-50 border border-black/10 px-3 py-1 rounded-full font-medium">Sports</span>
+                <span class="text-xs bg-cyan-50 border border-black/10 px-3 py-1 rounded-full font-medium">Tourism</span>
+            </div>
+            <a href="#contact" class="inline-block bg-[#3F5560] text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-[#5B7480] transition shadow-sm">Get in touch</a>
+        </div>
+    </section>
+
+    <!-- GRAPHIC DESIGN PROJECTS GRID (All 20 Projects) -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 reveal" id="projects">
+        <div class="border-b border-black/20 pb-4 mb-10 flex items-center justify-between">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Graphic Design &amp; Brand Projects</h2>
+            <span class="text-xs text-gray-500">Tap any project to view gallery</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="projects-grid"></div>
+    </section>
+
+    <!-- MEDIA GALLERY -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 reveal" id="media">
+        <div class="border-b border-black/20 pb-4 mb-10 flex items-center justify-between">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Media Gallery</h2>
+            <span class="text-xs text-gray-500">Tap an image to enlarge</span>
+        </div>
+        <div class="masonry" id="media-grid"></div>
+    </section>
+
+    <!-- SERVICES OFFERED / WHAT I DO -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 reveal" id="skills">
+        <div class="bg-white border border-black rounded-[32px] p-8 md:p-12 shadow-sm text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Graphic Design Services Offered</h3>
+            <p class="text-gray-600 max-w-xl mx-auto mb-8 text-sm">Specialized creative execution tailored to elevate brand identities and engagement across digital and print channels.</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="service-chip bg-purple-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-illustrations')">Vector Illustrations</span>
+                <span class="service-chip bg-pink-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-caricature')">Caricature</span>
+                <span class="service-chip bg-blue-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-logo')">Logo Designs</span>
+                <span class="service-chip bg-emerald-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-corporate')">Corporate Identity</span>
+                <span class="service-chip bg-amber-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-poster')">Poster Designs</span>
+                <span class="service-chip bg-cyan-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-brochure')">Brochure Designs</span>
+                <span class="service-chip bg-rose-50 border border-black px-5 py-2.5 rounded-full text-sm font-semibold" onclick="openGallery('svc-businesscard')">Business Card Designs</span>
+            </div>
+            <p class="text-xs text-gray-400 mt-6">Tap any service to view sample work</p>
+            <blockquote class="mt-10 pt-8 border-t border-gray-100">
+                <p class="text-xl md:text-2xl font-bold text-gray-900">"Design is where science and art break even."</p>
+                <footer class="text-sm text-purple-600 font-semibold mt-2">— Robin Mathew</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- CLOSING + CONTACT -->
+    <section class="max-w-6xl mx-auto px-6 pb-24 reveal" id="contact">
+        <div class="bg-[#191919] text-white rounded-[32px] p-8 md:p-14">
+            <p class="text-xl md:text-3xl font-bold leading-snug max-w-4xl mb-10">Operating Creafic built an unshakeable foundation in stakeholder relationships, timeline control, and creative problem-solving—capabilities I leverage daily to drive revenue and campaign success for enterprise brands.</p>
+            <div class="grid md:grid-cols-2 gap-10 items-start">
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">Contact Rozina Punjwani</h3>
+                    <p class="text-gray-400 text-sm mb-6">Contact me via email, or send a message using the form.</p>
+                    <a href="mailto:punjwanirozina@gmail.com" class="text-[#D9826B] font-bold hover:underline">punjwanirozina@gmail.com</a>
+                    <div class="flex flex-wrap gap-3 mt-8">
+                        <a href="resume.html" class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition text-sm">View résumé</a>
+                        <a href="https://www.linkedin.com/in/rozinapunjwani/" target="_blank" class="border border-white/40 font-semibold px-6 py-3 rounded-full hover:bg-white/10 transition text-sm">LinkedIn</a>
+                    </div>
+                </div>
+                <form action="mailto:punjwanirozina@gmail.com" method="post" enctype="text/plain" class="flex flex-col gap-3">
+                    <input name="Name" required placeholder="Name" class="bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm placeholder-gray-400 focus:outline-none focus:border-purple-400">
+                    <input name="Email" type="email" required placeholder="Email" class="bg-white/10 border border-white/20 rounded-full px-5 py-3 text-sm placeholder-gray-400 focus:outline-none focus:border-purple-400">
+                    <textarea name="Message" required rows="4" placeholder="Message" class="bg-white/10 border border-white/20 rounded-3xl px-5 py-3 text-sm placeholder-gray-400 focus:outline-none focus:border-purple-400"></textarea>
+                    <button type="submit" class="bg-[#3F5560] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#5B7480] transition text-sm self-start">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" onclick="if(event.target===this) closeGallery()">
+        <div id="lightbox-inner">
+            <div id="lightbox-imgwrap">
+                <div id="lightbox-close" onclick="closeGallery()">✕</div>
+                <div id="lightbox-prev" onclick="navGallery(-1)">‹</div>
+                <img id="lightbox-img" src="" alt="">
+                <div id="lightbox-next" onclick="navGallery(1)">›</div>
+            </div>
+            <div id="lightbox-caption">
+                <h4 id="lightbox-title"></h4>
+                <p id="lightbox-sub"></p>
+                <div id="lightbox-counter"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#191919] text-white py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">Let's talk about your brand.</h2>
+            <p class="font-bold text-[#D9826B] text-lg mb-12">and make it real together</p>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Rozina Punjwani.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="projects.html" class="hover:text-white transition">Portfolio</a>
+                    <a href="index.html#about" class="hover:text-white transition">About me</a>
+                    <a href="blog.html" class="hover:text-white transition">Blog</a>
+                    <a href="contact.html" class="hover:text-white transition">Contact</a>
+                    <a href="#top" class="hover:text-white transition">Back to top ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const W = 'https://static.wixstatic.com/media/b32a11_';
+        const MEDIA = [
+            ["b831910ee5c24f0aa1e23d99fe4a33f2~mv2.png","Father's Day design"],
+            ["d774002c40be416e94a51338ef6665a1~mv2.png","Mother's Day design"],
+            ["d3cf1ceefe7c4202b6bffc787364a9b4~mv2.jpg","Logo design"],
+            ["80a9c8d0b6a64addafe07aba8c06a610~mv2.png","Final logo"],
+            ["f435e923cd224c2da33b110b87f43b81~mv2.png","Logo, portrait version"],
+            ["debe17aaffa14ef6ab0fe5a70c845794~mv2.png","Business card design"],
+            ["cc20254c47594796bc1da236bd92d103~mv2.png","Turkey trip ad"],
+            ["599bbf25192140dca61aea0f951150ac~mv2.png","Turkey trip standee"],
+            ["01610472416748bea0793c6726d70326~mv2.png","AKU Sports Shop"],
+            ["2cd5e8b0c3514eef920ffab3f0c78d6a~mv2_d_1409_1875_s_2.png","Event tag with image"],
+            ["53d4779a13f543ebaa16a7501bb37114~mv2.png","Logo design"],
+            ["7cb29131ac3549208500fb3d1bd97596~mv2.png","Art illustration"],
+            ["7cafc1505c594f6f87e012f792c29212~mv2_d_5000_3337_s_4_2.jpg","World Diabetes Day"],
+            ["26312efac18d4b8d844cf7c39907b5eb~mv2_d_3287_2257_s_2.jpg","Pen tool illustration"],
+            ["e6aa7c690390456eb72298382c7f4854~mv2_d_2000_2000_s_2.jpg","Business cards"],
+            ["d49073733ba247d5a38629da346fda46~mv2_d_5000_3337_s_4_2.jpg","Book Day poster"]
+        ];
+
+        const GALLERIES = {
+            'media': { title: 'Media gallery', sub: 'Selected work', files: MEDIA.map(m => W + m[0]) },
+            'red-cross': { title: 'Red Cross Heat Wave Campaign', sub: 'Red Cross Red Crescent Climate Centre, Netherlands — Print & Social Posters', files: ['red-cross-1.png','red-cross-2.png','red-cross-3.png','red-cross-4.png'] },
+            'akdn-template': { title: 'AKDN Institutions Template System', sub: 'Billboard, Roll-up Banner, Poster & Cover Card templates across five boards', files: Array.from({length:11}, (_,i) => 'akdn-template-' + (i+1) + '.png') },
+            'aku-sportshop': { title: 'AKU Sports Shop Launch', sub: 'Poster, Standee & Price Tag', files: ['aku-sportshop-1.png','aku-sportshop-2.png','aku-sportshop-3.png'] },
+            'musical-night': { title: 'Musical Night Event', sub: 'Aga Khan University Hospital — Poster, Wall Display, Tickets & Web Banner', files: ['musical-night-1.png'] },
+            'cancer-awareness': { title: 'Breast Cancer Awareness Month', sub: 'Local Health Board — "Her Fight Is My Fight"', files: ['cancer-awareness-1.png','cancer-awareness-2.png'] },
+            'suicide-prevention': { title: 'Suicide Prevention Campaign', sub: 'Mental Health Awareness — Impactful Campaign Posters', files: ['suicide-prevention-1.png','suicide-prevention-2.png','suicide-prevention-3.png'] },
+            'world-diabetes-day': { title: 'World Diabetes Day Campaign', sub: 'Concept Poster Series', files: ['world-diabetes-day-1.png','world-diabetes-day-2.png','world-diabetes-day-3.png','world-diabetes-day-4.png','world-diabetes-day-5.png'] },
+            'florist': { title: 'Floral Boutique Identity', sub: 'SN Florals Boutique — Unique Logo, Business Cards & Event Tags', files: ['florist-1.png','florist-2.png','florist-3.png','florist-4.png'] },
+            'nightwear': { title: 'Fashion Nightwear Line', sub: 'BedHeads Brand — Distinctive Logo & Brand System', files: ['nightwear-1.png'] },
+            'kalakaar': { title: 'Social Cause Clothing Brand', sub: 'Kalakaar Initiative — Brand Logo & Identity System', files: ['kalakaar-1.png'] },
+            'clothing-brand': { title: 'Start-Up Clothing Brand', sub: 'Salima Nizar — Logo Creation & Visual Identity', files: ['clothing-brand-1.png'] },
+            'turkey-trip': { title: 'Turkey Trip Promotional Standee', sub: 'Aga Khan Social Welfare Board for Pakistan', files: ['turkey-trip-1.png','turkey-trip-2.png','turkey-trip-3.png'] },
+            'makeup-artist': { title: 'Makeup Artist Identity', sub: 'Sarah — Logo, Business Card & Letterhead', files: ['makeup-artist-1.png'] },
+            'baithak': { title: 'Baithak Chat Sessions', sub: 'Otaaq-e-Nafs, Therapy Solutions — Standee Design', files: ['baithak-1.png'] },
+            'teachers-training': { title: 'Teachers Training Program', sub: 'Local Education Board for Kharadar — Poster, Standee & WhatsApp Post', files: ['teachers-training-1.png'] },
+            'camporall': { title: 'Camporall 2019 Jurisdiction Camp', sub: 'AKYSBP District Karachi — Billboard & Invitation Card', files: ['camporall-1.png','camporall-2.png'] },
+            'book-day': { title: 'World Book Day Promotion', sub: 'NIST — Event Promotional Posters', files: ['book-day-1.png','book-day-2.png'] },
+            'spelling-bee': { title: 'Spelling Bee Competition', sub: 'Youth & Sports Board for Pakistan — Banner & Standee', files: ['spelling-bee-1.png','spelling-bee-2.png'] },
+            'book-fair': { title: 'Book Fair Promotion', sub: 'Community Event Poster', files: ['book-fair-1.png'] },
+            'creative-writing': { title: 'Creative Writing Classes Ad', sub: 'Aga Khan Local Education Board — Promotional Flyers', files: ['creative-writing-1.png','creative-writing-2.png'] },
+            'svc-illustrations': { title: 'Vector Illustrations', sub: 'Character & icon illustration work built in Adobe Illustrator', files: ['svc-illustrations-1.png','svc-illustrations-2.png','svc-illustrations-3.png'] },
+            'svc-caricature': { title: 'Caricature', sub: 'Custom digital caricature portraits', files: ['svc-caricature-1.png','svc-caricature-2.png'] },
+            'svc-logo': { title: 'Logo Designs', sub: 'Brand mark concepts across industries', files: ['svc-logo-1.png','svc-logo-2.png','svc-logo-3.png'] },
+            'svc-corporate': { title: 'Corporate Identity', sub: 'Full stationery & brand identity systems', files: ['svc-corporate-1.png','svc-corporate-2.png'] },
+            'svc-poster': { title: 'Poster Designs', sub: 'Selected poster work from client & social-cause campaigns', files: ['svc-poster-1.png','svc-poster-2.png','svc-poster-3.png','svc-poster-4.png'] },
+            'svc-brochure': { title: 'Brochure Designs', sub: 'Tri-fold brochure layouts', files: ['svc-brochure-1.png','svc-brochure-2.png','svc-brochure-3.png'] },
+            'svc-businesscard': { title: 'Business Card Designs', sub: 'Business card design samples', files: ['svc-businesscard-1.png','svc-businesscard-2.png'] }
+        };
+
+        const ALL_PROJECTS = [
+            ['red-cross','Red Cross Red Crescent Climate Centre, Netherlands','Red Cross Heat Wave Campaign','Impactful print & social posters for a heatwave awareness campaign across South Asia and Sub-Saharan Africa.','Print Posters & Social Media Poster Series','bg-red-50','text-red-600'],
+            ['akdn-template','Aga Khan Development Network for Pakistan','AKDN Institutions Template System','Standardized template system across five regulatory boards (Health, Education, Economic Planning, Youth & Sports).','Billboard, Roll-up Banner, Poster, Cover Card','bg-purple-50','text-gray-500'],
+            ['aku-sportshop','Aga Khan University','AKU Sports Shop Launch','Dynamic retail graphics focused on fitness enthusiasts while driving high anticipation for the shop launch.','Poster, Standee, Price Tag','bg-emerald-50','text-gray-500'],
+            ['musical-night','Aga Khan University Hospital','Musical Night Event','Unified event branding highlighting classic musical hits for a memorable evening experience.','Poster, Wall Display, Tickets, Web Banner','bg-amber-50','text-gray-500'],
+            ['cancer-awareness','Local Health Board for Kharadar & Cancer Support Team','Breast Cancer Awareness Month','Dual messaging "Her Fight Is My Fight" campaign: women\'s designs highlighting proactive health management; men\'s designs emphasizing household support.','Roll-up Banner Campaigns','bg-pink-50','text-pink-600'],
+            ['suicide-prevention','Mental Health Awareness','Suicide Prevention Campaign','Delicate, empathetic posters conveying messages from dual perspectives: individuals struggling and supporters.','Impactful Campaign Posters','bg-gray-50','text-gray-500'],
+            ['world-diabetes-day','Health Awareness','World Diabetes Day Campaign','A concept-driven poster series using everyday food and objects to deliver sharp, memorable diabetes-awareness messaging.','Concept Poster Series','bg-yellow-50','text-gray-500'],
+            ['florist','SN Florals Boutique','Floral Boutique Identity','Custom boutique designs utilizing soft, natural palettes to capture the organic vibe of the store.','Unique Logo, Business Cards, Event Tags','bg-pink-50','text-pink-600'],
+            ['nightwear','BedHeads Brand','Fashion Nightwear Line','Reflected a fashion-forward, comfortable nightwear essence using product-related conceptual elements.','Distinctive Logo & Brand System','bg-blue-50','text-gray-500'],
+            ['kalakaar','Kalakaar Initiative','Social Cause Clothing Brand','Working with underprivileged artisans to market skills online. Coloured strokes represent skilled workers, using native language.','Brand Logo & Identity System','bg-purple-50','text-purple-600'],
+            ['clothing-brand','Clothing Entrepreneur','Start-Up Clothing Brand','Emphasized brand name prominence with bespoke styling cues tailored to match the entrepreneur\'s distinct aesthetic.','Logo Creation & Visual Identity','bg-purple-50','text-gray-500'],
+            ['turkey-trip','AKYSBP & AK Social Welfare Board for Pakistan','Turkey Trip Promotional Standee','Travel-inspired standee designs promoting a group trip package, balancing destination imagery with clear package details.','Promotional Standees','bg-sky-50','text-gray-500'],
+            ['makeup-artist','Beauty Professional','Makeup Artist Identity','Corporate stationery illustrating high-end service offerings and the refined nature of the beauty brand.','Logo, Business Card, Letterhead','bg-rose-50','text-gray-500'],
+            ['baithak','Mental Therapy Solutions','Baithak Chat Sessions','Visuals depicting actual lounge environments to convey psychological comfort and warmth for attendees.','Standee, Participation Certificates','bg-amber-50','text-gray-500'],
+            ['teachers-training','Local Education Board for Kharadar','Teachers Training Program','Professional grooming and educational branding for young professionals entering teaching careers.','Poster, Standee, WhatsApp Post','bg-blue-50','text-gray-500'],
+            ['camporall','Aga Khan Sports District Pakistan','Camporall 2019 Jurisdiction Camp','Highlighting outdoor experiences, campfire nights, tent living, and community connection.','Billboard, Invitation Card','bg-emerald-50','text-gray-500'],
+            ['book-day','National Institute of Skilled Training (NIST)','World Book Day Promotion','Evocative, literary-themed visuals inviting the community to celebrate World Book Day.','Event Promotional Posters','bg-amber-50','text-gray-500'],
+            ['spelling-bee','Clifton YSB & Clifton Library','Spelling Bee Competition','Playful, bee-themed branding to promote a community spelling competition for young readers.','Banner, Standee','bg-yellow-50','text-gray-500'],
+            ['book-fair','Aga Khan Local Education Board','Book Fair Promotion','Vibrant, illustrative poster promoting a community book fair featuring faith & literary titles.','Event Poster','bg-cyan-50','text-gray-500'],
+            ['creative-writing','Aga Khan Local Education Board','Creative Writing Classes Ad','Bright, imaginative flyer designs promoting creative writing classes for young students.','Promotional Flyers','bg-orange-50','text-gray-500']
+        ];
+
+        function cardHTML(p) {
+            const [key, client, title, desc, designed, tint, color] = p;
+            const click = key ? `onclick="openGallery('${key}')"` : '';
+            const hint = key ? '<span class="view-hint text-xs font-bold text-purple-600 mt-2 block">View project gallery →</span>' : '';
+            return `<div class="project-card bg-white border border-black rounded-[28px] p-6 shadow-sm flex flex-col justify-between" ${click}>
+                <div>
+                    <span class="text-xs font-semibold ${color} uppercase tracking-wider block mb-1">${client}</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">${title}</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">${desc}</p>
+                </div>
+                <div class="${tint} border border-black/10 rounded-2xl p-4">
+                    <span class="text-xs font-bold block text-gray-800 mb-1">Designed:</span>
+                    <p class="text-xs text-gray-700">${designed}</p>${hint}
+                </div>
+            </div>`;
+        }
+
+        document.getElementById('projects-grid').innerHTML = ALL_PROJECTS.map(cardHTML).join('');
+
+        document.getElementById('media-grid').innerHTML = MEDIA.map((m,i) =>
+            `<img src="${W + m[0]}" alt="${m[1]}" loading="lazy" class="thumb w-full rounded-2xl border border-black bg-white" onclick="openGallery('media', ${i})">`).join('');
+
+        /* Reveal on scroll */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.05 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* Lightbox */
+        let currentGallery = null, currentIndex = 0;
+        function openGallery(key, start) {
+            if (!GALLERIES[key]) return;
+            currentGallery = key; currentIndex = start || 0;
+            renderLightboxImage();
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeGallery() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+            currentGallery = null;
+        }
+        function navGallery(dir) {
+            if (!currentGallery) return;
+            const g = GALLERIES[currentGallery];
+            currentIndex = (currentIndex + dir + g.files.length) % g.files.length;
+            renderLightboxImage();
+        }
+        function renderLightboxImage() {
+            const g = GALLERIES[currentGallery];
+            const imgEl = document.getElementById('lightbox-img');
+            imgEl.src = g.files[currentIndex];
+            imgEl.alt = g.title;
+            document.getElementById('lightbox-title').textContent = g.title;
+            document.getElementById('lightbox-sub').textContent = g.sub;
+            document.getElementById('lightbox-counter').textContent = g.files.length > 1 ? (currentIndex + 1) + ' / ' + g.files.length : '';
+            const showNav = g.files.length > 1;
+            document.getElementById('lightbox-prev').style.display = showNav ? 'flex' : 'none';
+            document.getElementById('lightbox-next').style.display = showNav ? 'flex' : 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (!currentGallery) return;
+            if (e.key === 'Escape') closeGallery();
+            if (e.key === 'ArrowLeft') navGallery(-1);
+            if (e.key === 'ArrowRight') navGallery(1);
+        });
+    </script>
+</body>
+</html>
