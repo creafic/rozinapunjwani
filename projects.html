@@ -16,6 +16,12 @@
         .project-card .view-hint { opacity: 0; transition: opacity 0.2s ease; }
         .project-card:hover .view-hint { opacity: 1; }
         
+        /* Filter Button Styling */
+        .filter-btn { transition: all 0.2s ease; }
+        .filter-btn.active { background-color: #111827; color: #ffffff; border-color: #111827; }
+        .filter-btn:not(.active) { background-color: #ffffff; color: #374151; border-color: #e5e7eb; }
+        .filter-btn:not(.active):hover { border-color: #9ca3af; color: #111827; }
+
         /* Case Study Modal */
         #casestudy { position: fixed; inset: 0; background: rgba(10,10,14,0.85); z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px; }
         #casestudy.open { display: flex; }
@@ -59,14 +65,24 @@
     </header>
 
     <!-- Selected Works Header -->
-    <section class="max-w-5xl mx-auto px-6 pt-12 pb-10 text-center reveal">
+    <section class="max-w-5xl mx-auto px-6 pt-12 pb-8 text-center reveal">
         <span class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-2 block">PORTFOLIO</span>
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4">Selected work, measured in results.</h1>
         <p class="max-w-2xl mx-auto text-base md:text-lg text-gray-600 leading-relaxed">Brand, campaign, and web projects where strategy, design, and marketing work together to drive growth.</p>
     </section>
 
+    <!-- CATEGORY FILTER BUTTONS -->
+    <section class="max-w-6xl mx-auto px-6 pb-10 reveal">
+        <div class="flex flex-wrap items-center gap-3">
+            <button onclick="filterProjects('all')" class="filter-btn active text-xs font-bold px-6 py-2.5 rounded-full border shadow-sm">All</button>
+            <button onclick="filterProjects('brand')" class="filter-btn text-xs font-bold px-6 py-2.5 rounded-full border shadow-sm">Brand &amp; Design</button>
+            <button onclick="filterProjects('media')" class="filter-btn text-xs font-bold px-6 py-2.5 rounded-full border shadow-sm">Media &amp; Campaigns</button>
+            <button onclick="filterProjects('web')" class="filter-btn text-xs font-bold px-6 py-2.5 rounded-full border shadow-sm">Web &amp; SEO</button>
+        </div>
+    </section>
+
     <!-- FEATURED CREAFIC BLOCK -->
-    <section class="max-w-6xl mx-auto px-6 pb-12 reveal">
+    <section class="max-w-6xl mx-auto px-6 pb-12 reveal project-item" data-category="brand">
         <a href="creafic.html" class="block bg-[#16161A] border border-black rounded-[32px] overflow-hidden shadow-xl hover:shadow-2xl hover:border-purple-500 transition-all duration-300 group">
             <div class="grid md:grid-cols-2 gap-0 items-stretch">
                 <div class="p-8 md:p-12 flex flex-col justify-between text-white">
@@ -82,12 +98,29 @@
                             <span><strong>Focus:</strong> Brand Identity · Packaging · Creative Direction</span>
                         </div>
                         <span class="inline-flex items-center gap-2 text-sm font-bold text-white bg-purple-600 hover:bg-purple-500 px-6 py-3 rounded-full transition-all shadow-md">
-                            Read the case study &amp; view gallery →
+                            Read the case study &amp; view 20+ projects →
                         </span>
                     </div>
                 </div>
-                <div class="bg-[#26262C] flex items-center justify-center p-8 min-h-[280px]">
-                    <img src="red-cross-1.png" alt="Creafic - Design Solutions Work Preview" class="max-h-72 object-contain rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-105">
+                
+                <!-- Creative Showcase Visual (Replacing the Red Cross artwork) -->
+                <div class="bg-gradient-to-br from-[#1E1E24] via-[#2A233C] to-[#121215] flex items-center justify-center p-8 min-h-[300px] relative overflow-hidden group">
+                    <!-- Subtle Background Glows -->
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-600/30 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <!-- Floating Creative Card Stack -->
+                    <div class="relative w-full max-w-xs flex flex-col items-center">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl w-full text-center transform transition-transform duration-500 group-hover:scale-105">
+                            <img src="https://static.wixstatic.com/media/b32a11_1f724738e7cb4ec892dd75009d56014a~mv2.png" alt="Creafic Logo" class="h-14 mx-auto mb-4 object-contain filter drop-shadow-md">
+                            <div class="flex justify-center gap-2 mb-3">
+                                <span class="bg-purple-500/30 text-purple-200 text-[10px] font-bold px-2.5 py-1 rounded-full border border-purple-400/30">Packaging</span>
+                                <span class="bg-pink-500/30 text-pink-200 text-[10px] font-bold px-2.5 py-1 rounded-full border border-pink-400/30">Identities</span>
+                                <span class="bg-blue-500/30 text-blue-200 text-[10px] font-bold px-2.5 py-1 rounded-full border border-blue-400/30">Vector Art</span>
+                            </div>
+                            <p class="text-xs text-gray-300 font-medium">20+ Corporate &amp; Community Design Case Studies</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </a>
@@ -98,8 +131,9 @@
         <div class="border-b border-black/20 pb-4 mb-10 flex items-center justify-between">
             <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Strategic Campaigns &amp; Web Projects</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('tang')">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+            
+            <div class="project-card project-item bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" data-category="media" onclick="openCaseStudy('tang')">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-wider text-pink-600 mb-2 block">FMCG &amp; Media Planning</span>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3">Mondelez (Tang &amp; Cadbury) Campaigns</h3>
@@ -112,7 +146,7 @@
                 <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
             </div>
 
-            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('website-strategy')">
+            <div class="project-card project-item bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" data-category="web" onclick="openCaseStudy('website-strategy')">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-2 block">Web Redesign &amp; UX</span>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3">Website Design &amp; Strategy</h3>
@@ -125,7 +159,7 @@
                 <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
             </div>
 
-            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('alcatel')">
+            <div class="project-card project-item bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" data-category="media" onclick="openCaseStudy('alcatel')">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2 block">Brand Launch &amp; Retail</span>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3">Alcatel Mobile Brand Launch</h3>
@@ -138,7 +172,7 @@
                 <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
             </div>
 
-            <div class="project-card bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" onclick="openCaseStudy('cadbury')">
+            <div class="project-card project-item bg-white border border-black rounded-[28px] p-8 shadow-sm flex flex-col justify-between" data-category="media" onclick="openCaseStudy('cadbury')">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2 block">Digital Innovation &amp; Buying</span>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3">Cadbury Digital Innovation</h3>
@@ -150,6 +184,7 @@
                 </div>
                 <span class="view-hint text-xs font-bold text-purple-600 mt-3 block">View case study →</span>
             </div>
+            
         </div>
     </section>
 
@@ -204,6 +239,25 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, observerOptions);
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Category Filtering Function
+        function filterProjects(category) {
+            // Update active button state
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter items
+            const items = document.querySelectorAll('.project-item');
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
 
         const CASE_STUDIES = {
             'website-strategy': {
