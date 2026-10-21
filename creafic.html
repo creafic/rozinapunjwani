@@ -71,9 +71,12 @@
   .hero p.lede{font-size:1.18rem;max-width:34em;margin-top:26px}
   .hero p.sub{margin-top:12px;max-width:34em;color:#4a443d}
   .hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
-  .logo-card{background:var(--white);border:2px solid var(--ink);border-radius:28px;box-shadow:var(--shadow);padding:36px;display:flex;align-items:center;justify-content:center;position:relative;transform:rotate(2deg)}
-  .logo-card img{max-height:200px;object-fit:contain}
-  .sticker{position:absolute;top:-26px;right:-18px;width:104px;height:104px;border-radius:50%;background:var(--sun);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-weight:800;font-size:.8rem;line-height:1.1;transform:rotate(14deg);box-shadow:3px 3px 0 var(--ink)}
+  
+  /* Hero Illustration Card */
+  .hero-card{background:var(--white);border:2px solid var(--ink);border-radius:28px;box-shadow:var(--shadow);padding:16px;display:flex;align-items:center;justify-content:center;position:relative;transform:rotate(1deg);overflow:visible;}
+  .hero-card img{width:100%;height:auto;border-radius:20px;object-fit:cover;}
+  .sticker{position:absolute;top:-22px;right:-16px;width:104px;height:104px;border-radius:50%;background:var(--sun);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-weight:800;font-size:.8rem;line-height:1.1;transform:rotate(14deg);box-shadow:3px 3px 0 var(--ink);z-index:2;}
+
   .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
   .meta div{background:var(--white);border:2px solid var(--ink);border-radius:20px;padding:20px 22px;box-shadow:var(--shadow)}
   .meta div:nth-child(1){background:var(--mint)}
@@ -81,7 +84,7 @@
   .meta div:nth-child(3){background:var(--sun)}
   .meta dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.7;margin-bottom:4px}
   .meta dd{font-weight:700}
-  @media(max-width:820px){.hero{padding-top:44px}.hero .grid{grid-template-columns:1fr}.logo-card{transform:none;max-width:360px}.meta{grid-template-columns:1fr}}
+  @media(max-width:820px){.hero{padding-top:44px}.hero .grid{grid-template-columns:1fr}.hero-card{transform:none;max-width:380px;margin:0 auto}.meta{grid-template-columns:1fr}}
 
   /* Marquee */
   .marquee{background:var(--brand);color:#fff;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap;padding:14px 0}
@@ -218,10 +221,13 @@
             <a class="btn ghost" href="#contact">Get in touch</a>
           </div>
         </div>
-        <div class="logo-card">
-          <div class="sticker">Brand<br>Print<br>Pack</div>
-          <img src="https://static.wixstatic.com/media/b32a11_1f724738e7cb4ec892dd75009d56014a~mv2.png" alt="Creafic logo">
+        
+        <!-- Replaced with Illustrated Studio Desk Portrait -->
+        <div class="hero-card">
+          <div class="sticker">Creative<br>Studio</div>
+          <img src="Creative Designer at Her Studio Desk.png" alt="Rozina Punjwani at her studio desk">
         </div>
+
       </div>
       <dl class="meta">
         <div><dt>Role</dt><dd>Founder &amp; Creative Director</dd></div>
