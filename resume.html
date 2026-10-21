@@ -30,7 +30,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}
+  h1,h2,h3,h4{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}
   a{color:inherit}
   .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
   section{padding:64px 0}
@@ -65,9 +65,23 @@
   .pulse{transform-origin:center;transform-box:fill-box;animation:pulse 2.2s ease-out infinite}
   @keyframes pulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(3.2);opacity:0}}
 
-  /* timeline (vertical, newest first) */
+  /* timeline (vertical, grouped by era) */
   .timeline{position:relative;display:grid;gap:18px;padding-left:34px}
   .timeline::before{content:"";position:absolute;top:8px;bottom:8px;left:9px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+  
+  .section-divider{
+    position:relative;
+    margin:20px 0 10px -34px;
+    padding-left:34px;
+  }
+  .section-divider h4{
+    font-size:1.15rem;
+    color:var(--accent);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+
   .step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
   .step::before{content:"";position:absolute;top:28px;left:-33px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:4px solid var(--accent)}
   .step .meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -104,8 +118,6 @@
   .cert{padding:18px;border-radius:16px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent-2)}
   .cert b{display:block;font-size:.95rem}
   .cert span{color:var(--muted);font-size:.85rem}
-  .community{margin-top:16px;padding:18px 22px;border-radius:16px;border:1px dashed var(--line);color:var(--muted);font-size:.93rem}
-  .community b{color:var(--ink)}
 
   .cta{text-align:center;background:var(--ink);color:var(--bg);border-radius:28px;padding:52px 24px}
   .cta h2{margin-bottom:8px}
@@ -197,9 +209,14 @@
     <div class="eyebrow reveal">Career pathway</div>
     <h2 class="reveal">From agency floor to brand leadership</h2>
     <p class="lead reveal">Global networks sharpened the craft; hands-on brand ownership put it to work.</p>
+    
     <div class="timeline">
 
-      <!-- Canadian Experience -->
+      <!-- CANADIAN EXPERIENCE -->
+      <div class="section-divider reveal">
+        <h4>Canadian Experience</h4>
+      </div>
+
       <div class="step now reveal">
         <div class="meta"><span>Mar 2026 – Present</span><span class="tag">Canada</span></div>
         <h3>Marketing &amp; Advertising Manager</h3>
@@ -222,7 +239,11 @@
         </ul>
       </div>
 
-      <!-- International Experience -->
+      <!-- INTERNATIONAL EXPERIENCE -->
+      <div class="section-divider reveal">
+        <h4>International Experience: 2017 – 2022</h4>
+      </div>
+
       <div class="step reveal">
         <div class="meta"><span>2021 – 2022</span><span class="tag">Pakistan</span></div>
         <h3>Graphic Designer &amp; Content Developer</h3>
@@ -237,7 +258,11 @@
         <p class="desc">Led an independent design practice delivering brand identities, packaging, and marketing collateral across healthcare, retail, non-profit, and education. Directed high-visibility public welfare campaigns, including crisis-response assets for the Red Cross.</p>
       </div>
 
-      <!-- Early Career Experience -->
+      <!-- EARLY CAREER -->
+      <div class="section-divider reveal">
+        <h4>Early Career: 2014 – 2017</h4>
+      </div>
+
       <div class="step reveal">
         <div class="meta"><span>2016 – 2017</span><span class="tag">UAE</span></div>
         <h3>Media Executive</h3>
