@@ -10,23 +10,18 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .outline-text-rose { color: transparent; -webkit-text-stroke: 1.5px #d48f97; }
-        .outline-text-purple { color: transparent; -webkit-text-stroke: 1.5px #9996c2; }
-        .outline-text-blue { color: transparent; -webkit-text-stroke: 1.5px #8ab0ce; }
-        .outline-text-teal { color: transparent; -webkit-text-stroke: 1.5px #74b8ad; }
         @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .animate-marquee { display: flex; width: max-content; animation: slide 30s linear infinite; }
         .animate-marquee:hover { animation-play-state: paused; }
         .cycle-word { display: inline-block; transition: opacity 0.25s, transform 0.25s; }
         .cycle-word.out { opacity: 0; transform: translateY(8px); }
         
-        /* Shimmer Wave Effect inside the progress bars */
+        /* Shimmer Wave Effect inside progress bars */
         @keyframes shimmerWave {
             0% { background-position: -200% 0; }
             100% { background-position: 200% 0; }
         }
         
-        /* Animated Progress Bar Width Fill + Continuous Shimmer */
         .tool-bar-fill {
             width: 0%;
             transition: width 1.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -41,13 +36,12 @@
     <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
         <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-3xl md:rounded-full px-6 md:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
             
-            <!-- Top bar for Mobile (Logo + Hamburger Button) -->
+            <!-- Mobile Header Bar -->
             <div class="w-full flex items-center justify-between md:w-auto">
                 <div class="flex items-center gap-2">
                     <img src="logo.png" alt="Creafic Logo" class="h-8 object-contain">
                 </div>
 
-                <!-- Mobile Hamburger Button -->
                 <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none p-2 border border-black/10 rounded-xl bg-gray-50" onclick="toggleMobileMenu()">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -84,7 +78,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12">
             <div class="lg:col-span-7 text-left">
                 <div class="inline-block text-center mx-auto lg:mx-0 bg-white border border-black px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase text-gray-900 mb-6 shadow-sm">
-                    🎯 360° Marketing Expert | Brand, Media, Creative &amp; Advertising
+                    Marketing Leader &amp; Multi-Channel Campaigns Strategist
                 </div>
                 <h1 class="text-center md:text-left text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-4">
                     Hello! I'm Rozina.
@@ -225,32 +219,37 @@
         </div>
     </section>
 
-    <!-- Experience At A Glance -->
+    <!-- Experience At A Glance (Updated with 5th Card) -->
     <section class="py-20 max-w-6xl mx-auto px-6 reveal">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Experience At A Glance</h2>
             <p class="text-gray-600">Experience, reach, and networks behind the work.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-white border border-black rounded-3xl p-8 text-center shadow-sm flex flex-col justify-center items-center">
-                <span class="text-5xl mb-3">🎯</span>
-                <span class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-2">8+ Years</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div class="bg-white border border-black rounded-3xl p-6 text-center shadow-sm flex flex-col justify-center items-center">
+                <span class="text-4xl mb-3">🎯</span>
+                <span class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-2">8+ Years</span>
                 <span class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Marketing Experience</span>
             </div>
-            <div class="bg-white border border-black rounded-3xl p-8 text-center shadow-sm flex flex-col justify-center items-center">
-                <span class="text-5xl mb-3">🌍</span>
-                <span class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-2">3 Markets</span>
+            <div class="bg-white border border-black rounded-3xl p-6 text-center shadow-sm flex flex-col justify-center items-center">
+                <span class="text-4xl mb-3">🌍</span>
+                <span class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-2">3 Markets</span>
                 <span class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Canada · UAE · Pakistan</span>
             </div>
-            <div class="bg-white border border-black rounded-3xl p-8 text-center shadow-sm flex flex-col justify-center items-center">
-                <span class="text-5xl mb-3">🏢</span>
-                <span class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-2">Global Networks</span>
+            <div class="bg-white border border-black rounded-3xl p-6 text-center shadow-sm flex flex-col justify-center items-center">
+                <span class="text-4xl mb-3">🏢</span>
+                <span class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-2">Global Networks</span>
                 <span class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Omnicom Media Group · Starcom · ADCOMM DMCC</span>
             </div>
-            <div class="bg-white border border-black rounded-3xl p-8 text-center shadow-sm flex flex-col justify-center items-center">
-                <span class="text-5xl mb-3">🚀</span>
-                <span class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-2">5+ Sectors</span>
+            <div class="bg-white border border-black rounded-3xl p-6 text-center shadow-sm flex flex-col justify-center items-center">
+                <span class="text-4xl mb-3">🚀</span>
+                <span class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-2">5+ Sectors</span>
                 <span class="text-xs font-semibold text-gray-700 uppercase tracking-wider">FMCG · Tech · Healthcare · Retail · Non-Profit</span>
+            </div>
+            <div class="bg-white border border-black rounded-3xl p-6 text-center shadow-sm flex flex-col justify-center items-center">
+                <span class="text-4xl mb-3">🎯</span>
+                <span class="text-xl md:text-2xl font-extrabold tracking-tight text-gray-900 mb-2">360° Marketing Expert</span>
+                <span class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Brand, Media, Creative &amp; Advertising</span>
             </div>
         </div>
     </section>
@@ -401,34 +400,34 @@
                 </div>
             </div>
 
-            <!-- Tools & Platforms Section -->
+            <!-- Restyled Tools & Platforms Section -->
             <div id="tools-section" class="max-w-5xl mx-auto mt-16 bg-[#FAFAFC] border border-black/10 rounded-3xl p-8 md:p-12">
                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-2">Tools &amp; platforms</h3>
                 <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10 text-sm">A selection of tools used across creative, digital, performance and marketing work.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
                     <!-- Column 1: Design & Creative -->
                     <div class="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-sm font-bold uppercase tracking-wider text-purple-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
                             <span>🎨</span> Design &amp; Creative
                         </h4>
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Adobe Creative Suite (Ps, Ai, Id)</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
                                     <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Canva &amp; Brand Collateral</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
                                     <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="95%" style="width: 95%;"></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Figma &amp; Web UX</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
+                                <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Web UX</span></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
                                     <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="85%" style="width: 85%;"></div>
                                 </div>
                             </div>
@@ -437,26 +436,26 @@
 
                     <!-- Column 2: Digital, Paid Media & CRM -->
                     <div class="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-sm font-bold uppercase tracking-wider text-purple-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
                             <span>🚀</span> Media, Ads &amp; CRM
                         </h4>
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Google Ads &amp; Meta Ads Manager</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
+                                    <div class="tool-bar-fill bg-gradient-to-r from-emerald-300 via-emerald-500 to-emerald-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>HubSpot, Mailchimp &amp; Automation</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="88%" style="width: 88%;"></div>
+                                <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>HubSpot &amp; Mailchimp</span></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
+                                    <div class="tool-bar-fill bg-gradient-to-r from-emerald-300 via-emerald-500 to-emerald-300 border border-black/10 h-full rounded-full" data-target="88%" style="width: 88%;"></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>WordPress, Elementor &amp; SEO</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="85%" style="width: 85%;"></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
+                                    <div class="tool-bar-fill bg-gradient-to-r from-emerald-300 via-emerald-500 to-emerald-300 border border-black/10 h-full rounded-full" data-target="85%" style="width: 85%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -464,62 +463,41 @@
 
                     <!-- Column 3: Analytics & Insights -->
                     <div class="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-sm font-bold uppercase tracking-wider text-purple-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
                             <span>📊</span> Analytics &amp; Research
                         </h4>
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>GA4 &amp; Attribution Modeling</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
+                                    <div class="tool-bar-fill bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Nielsen, Kantar, Ipsos, Euromonitor</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="85%" style="width: 85%;"></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
+                                    <div class="tool-bar-fill bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 border border-black/10 h-full rounded-full" data-target="85%" style="width: 85%;"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Column 4: AI & Workflows -->
+                    <!-- Column 4: AI & Generative Tools -->
                     <div class="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-sm font-bold uppercase tracking-wider text-purple-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
                             <span>🤖</span> AI &amp; Generative Tools
                         </h4>
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>ChatGPT, Claude &amp; Perplexity</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
+                                    <div class="tool-bar-fill bg-gradient-to-r from-indigo-300 via-indigo-500 to-indigo-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Midjourney &amp; Adobe Firefly</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="85%" style="width: 85%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Column 5: Social & Ops Stack -->
-                    <div class="bg-white border border-black/10 rounded-2xl p-6 shadow-sm md:col-span-2 lg:col-span-2">
-                        <h4 class="text-sm font-bold uppercase tracking-wider text-purple-600 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
-                            <span>⚙️</span> Operations &amp; Social Publishing
-                        </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Buffer, Hootsuite &amp; Meta Suite</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="88%" style="width: 88%;"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between items-center mb-1 text-xs font-bold text-gray-900"><span>Asana, Trello &amp; MS Office Stack</span></div>
-                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-3 p-0.5 overflow-hidden">
-                                    <div class="tool-bar-fill bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 border border-black/10 h-full rounded-full" data-target="90%" style="width: 90%;"></div>
+                                <div class="w-full bg-gray-100 border border-black/10 rounded-full h-2.5 p-0.5 overflow-hidden">
+                                    <div class="tool-bar-fill bg-gradient-to-r from-indigo-300 via-indigo-500 to-indigo-300 border border-black/10 h-full rounded-full" data-target="85%" style="width: 85%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -549,13 +527,14 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- Blog Section (Updated with all 6 blogs in a 3-column grid) -->
     <section id="writing" class="py-24 max-w-6xl mx-auto px-6 reveal">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Marketing Journal.</h2>
             <p class="text-gray-600 max-w-xl mx-auto">A closer look at the campaigns, brands, and cultural moments shaping how people connect with businesses, featuring my insights, experiences, and practical tips on marketing, creativity, and brand growth.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog 1 -->
             <a href="blog-1.html" class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition">
                 <div class="h-48 border-b border-black overflow-hidden bg-purple-50">
                     <img src="blog-1.png" alt="Poshmark SoHo Pop-Up campaign" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -567,6 +546,7 @@
                     <span class="font-semibold text-sm text-purple-600 group-hover:underline">Read article →</span>
                 </div>
             </a>
+            <!-- Blog 2 -->
             <a href="blog-2.html" class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition">
                 <div class="h-48 border-b border-black overflow-hidden bg-amber-50">
                     <img src="blog-2.png" alt="Ameriprise Financial campaign" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -578,6 +558,7 @@
                     <span class="font-semibold text-sm text-purple-600 group-hover:underline">Read article →</span>
                 </div>
             </a>
+            <!-- Blog 3 -->
             <a href="blog-3.html" class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition">
                 <div class="h-48 border-b border-black overflow-hidden bg-emerald-50">
                     <img src="blog-3.png" alt="Tinder Baldies campaign" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -587,6 +568,42 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition">Making Bold Statements: What Tinder Canada's "Baldies" Campaign Gets Right</h3>
                     <p class="text-sm text-gray-600 mb-6 flex-grow">How Tinder turned a viral meme and a Pitbull concert into a participatory, earned-media dating campaign.</p>
                     <span class="font-semibold text-sm text-purple-600 group-hover:underline">Read article →</span>
+                </div>
+            </a>
+            <!-- Blog 4 -->
+            <a href="blog-4.html" class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition">
+                <div class="h-48 border-b border-black overflow-hidden bg-rose-50">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="CPG Food Marketing" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <small class="text-xs font-bold uppercase tracking-wider text-rose-600 block mb-2">CPG &amp; Retail Strategy &bull;</small>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition">From Shelf to Scroll: How CPG Brands Win the Battle for Digital Attention</h3>
+                    <p class="text-sm text-gray-600 mb-6 flex-grow">Navigating retail shifts and e-commerce activations to turn impulse buys into long-term customer loyalty.</p>
+                    <span class="font-semibold text-sm text-rose-600 group-hover:underline">Read article →</span>
+                </div>
+            </a>
+            <!-- Blog 5 -->
+            <a href="blog-5.html" class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition">
+                <div class="h-48 border-b border-black overflow-hidden bg-indigo-50">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80" alt="AI Marketing Workflows" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <small class="text-xs font-bold uppercase tracking-wider text-indigo-600 block mb-2">Marketing Tech &amp; AI &bull;</small>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition">Beyond the Prompt: Integrating AI Into Everyday Marketing Workflows</h3>
+                    <p class="text-sm text-gray-600 mb-6 flex-grow">How modern strategists pair generative AI tools with human creative judgment to scale campaign output safely.</p>
+                    <span class="font-semibold text-sm text-indigo-600 group-hover:underline">Read article →</span>
+                </div>
+            </a>
+            <!-- Blog 6 -->
+            <a href="blog-6.html" class="bg-white border border-black rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition">
+                <div class="h-48 border-b border-black overflow-hidden bg-sky-50">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31216914fc?auto=format&fit=crop&w=800&q=80" alt="Product Storytelling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <small class="text-xs font-bold uppercase tracking-wider text-sky-600 block mb-2">Brand Narrative &bull;</small>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition">The Power of Product Storytelling in Customer Retention</h3>
+                    <p class="text-sm text-gray-600 mb-6 flex-grow">Why acquisition gets the hype, but authentic value messaging and nurturing keep customers coming back.</p>
+                    <span class="font-semibold text-sm text-sky-600 group-hover:underline">Read article →</span>
                 </div>
             </a>
         </div>
