@@ -1,108 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tinder Baldies: Cultural Relevance &amp; Participatory Campaigns | Rozina Punjwani</title>
-<meta name="description" content="An analysis of Tinder Canada's Baldies campaign and participatory experiential marketing.">
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--accent:#64866C;--soft:#E8EFE8}
-body{font-family:'DM Sans',sans-serif;background:#F7F4EF;color:#292724}
-h1,h2,.serif{font-family:'Playfair Display',serif}
-.progress{height:3px;background:var(--accent);width:0;position:fixed;top:0;left:0;z-index:100}
-.article p{line-height:1.95;color:#5E5A55;margin-bottom:1.4rem}
-.article h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin:3rem 0 1rem}
-.article strong{color:#292724}
-.article ul{list-style:disc;padding-left:1.5rem;margin:1rem 0 2rem;color:#5E5A55}
-.article li{line-height:1.85;margin-bottom:.85rem}
-.navlink{position:relative}
-.navlink:after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--accent);transition:.3s}
-.navlink:hover:after,.navlink.active:after{width:100%}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder Baldies: Cultural Relevance & Participatory Campaigns | Rozina Punjwani</title>
+    <meta name="description" content="How Tinder turned a viral meme and concert momentum into an earned media campaign through experiential activations and community participation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .article-body p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; font-size: 1rem; }
+        .article-body h2 { font-size: 1.4rem; font-weight: 800; color: #111827; margin: 2rem 0 1rem; tracking: -0.02em; }
+        .article-body strong { color: #111827; }
+        .article-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #374151; }
+        .article-body li { margin-bottom: 0.5rem; line-height: 1.7; }
+    </style>
 </head>
-<body>
-<div class="progress" id="progress"></div>
-<header class="max-w-7xl mx-auto px-6 py-6">
-<nav class="flex items-center justify-between border-b border-[#DED8D0] pb-5">
-<a href="index.html"><img src="logo.png" alt="Rozina Punjwani" class="h-9"></a>
-<div class="hidden md:flex gap-8 text-sm text-[#625D56]">
-<a class="navlink" href="index.html">Home</a><a class="navlink" href="projects.html">Projects</a><a class="navlink" href="index.html#about">About</a><a class="navlink" href="index.html#process">Process</a><a class="navlink active" href="blog.html">Journal</a><a class="navlink" href="contact.html">Contact</a>
-</div>
-<a href="resume.html" class="text-sm border-b border-[#64866C] pb-1 font-semibold">Résumé ↗</a>
-</nav>
-</header>
+<body class="bg-[#EAE6F8] text-gray-900 antialiased selection:bg-purple-200">
 
-<main class="max-w-5xl mx-auto px-6 pt-10 pb-24">
-<a href="blog.html" class="text-sm text-[#82796F] hover:text-[#64866C]">← Back to Journal</a>
-<section class="max-w-4xl mt-12 mb-10">
-<div class="flex gap-3 text-xs uppercase tracking-[.18em] text-[#64866C] font-bold mb-6"><span>Cultural Marketing &amp; PR</span><span class="text-[#BDB5AA]">/</span><span class="text-[#82796F]">5 min read</span></div>
-<h1 class="text-4xl md:text-6xl leading-[1.13] font-semibold mb-7">Making Bold Statements: What Tinder Canada's "Baldies" Campaign Gets Right About Cultural Momentum</h1>
-<p class="text-lg md:text-xl leading-relaxed text-[#777068] max-w-3xl">Brands don't need to invent cultural trends from scratch. The real strategy lies in building authentic experiences around moments consumers are already celebrating.</p>
-<div class="mt-8 text-sm text-[#82796F]">By Rozina Punjwani <span class="mx-2">·</span> Marketing &amp; Brand Strategy</div>
-</section>
+    <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
+        <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-full px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html"><img src="logo.png" alt="Rozina Punjwani Logo" class="h-8 object-contain"></a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+                <a href="index.html" class="hover:text-black transition">Home</a>
+                <a href="projects.html" class="hover:text-black transition">Projects</a>
+                <a href="index.html#about" class="hover:text-black transition">About</a>
+                <a href="index.html#process" class="hover:text-black transition">Process</a>
+                <a href="blog.html" class="text-black font-bold transition">Blog</a>
+                <a href="contact.html" class="hover:text-black transition">Contact</a>
+            </div>
+            <div>
+                <a href="resume.html" target="_blank" rel="noopener" class="bg-[#3F5560] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5B7480] transition-all shadow-sm">Résumé</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="aspect-[16/9] overflow-hidden mb-16"><img src="blog-3.png" alt="Tinder Canada Baldies campaign" class="w-full h-full object-cover"></div>
+    <main class="max-w-3xl mx-auto px-6 pt-8 pb-24 reveal">
+        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-black transition mb-8">← Back to all articles</a>
 
-<article class="article max-w-3xl mx-auto">
-<p class="text-xl font-medium !text-[#39352F]">Every brand team encounters the same question: should you stick strictly to safe corporate messaging, or take a bold creative stance to earn cultural relevance?</p>
+        <div class="mb-4 flex items-center gap-3">
+            <span class="uppercase tracking-wider font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full text-xs">Cultural Marketing &amp; PR</span>
+            <span class="text-xs text-gray-500 font-medium">• 5 min read</span>
+        </div>
+        
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 mt-2 mb-4 leading-tight">
+            Making Bold Statements: What Tinder Canada's "Baldies" Campaign Gets Right About Cultural Momentum
+        </h1>
+        <p class="text-base text-gray-600 mb-8 font-medium leading-relaxed">Brands don't need to invent cultural trends from scratch. The real strategy lies in building authentic experiences around moments consumers are already celebrating.</p>
 
-<p>Tinder Canada launched "Tinder Baldies" alongside agency Academy during Pitbull's concert tour in Toronto. Capitalizing on the viral "Bald Guy Summer" trend, Tinder set up a mobile barbershop ticketing booth offering haircuts or branded bald caps—granting fans access to an exclusive Tinder boat party on Toronto Harbour.</p>
+        <div class="mb-10 overflow-hidden rounded-3xl border border-black shadow-sm aspect-video bg-emerald-100">
+            <img src="blog-3.png" alt="Tinder Canada Baldies Campaign Visual" class="w-full h-full object-cover">
+        </div>
 
-<p>Supported by out-of-home posters, social creator partnerships, and in-app targeting, the activation grounded a fun pop-culture moment in genuine consumer research regarding dating open-mindedness.</p>
+        <article class="bg-white border border-black rounded-[32px] p-8 md:p-12 shadow-sm article-body">
+            <p class="text-lg font-semibold text-gray-900 leading-relaxed mb-6">Every brand team encounters the same question: should you stick strictly to safe corporate messaging, or take a bold creative stance to earn cultural relevance?</p>
 
-<h2>My Analysis as an Integrated Marketer</h2>
-<p>Having produced live event collateral and public activations—including emergency community response materials for the <a href="projects.html" class="text-[#64866C] underline font-semibold">Red Cross Netherlands</a>—I analyze this campaign's mechanics:</p>
+            <p>Tinder Canada launched "Tinder Baldies" alongside agency Academy during Pitbull's concert tour in Toronto. Capitalizing on the viral "Bald Guy Summer" trend, Tinder set up a mobile barbershop ticketing booth offering haircuts or branded bald caps—granting fans access to an exclusive Tinder boat party on Toronto Harbour.</p>
 
-<ul>
-<li><strong>Amplify Active Conversations:</strong> Tinder didn't force a meme. They identified an organic audience conversation and provided the physical infrastructure to elevate it.</li>
-<li><strong>Research-Backed Creativity:</strong> Anchoring an eccentric activation in behavioral survey data gave the media strategy clear commercial justification.</li>
-<li><strong>Participation Over Passive Views:</strong> Prompting attendees to wear branded bald caps turned event-goers into active brand ambassadors and organic content creators.</li>
-</ul>
+            <p>Supported by out-of-home posters, social creator partnerships, and in-app targeting, the activation grounded a fun pop-culture moment in genuine consumer research regarding dating open-mindedness.</p>
 
-<blockquote class="my-14 py-8 px-8 md:px-12 border-l-2 border-[#64866C]" style="background:var(--soft)">
-<p class="serif text-2xl md:text-3xl !text-[#405C47] !mb-3">"The most memorable campaigns invite people to become part of the story."</p>
-<span class="text-xs uppercase tracking-widest text-[#718A76]">Participation Creates Momentum</span>
-</blockquote>
+            <h2>My Analysis as an Integrated Marketer</h2>
+            <p>Having produced live event collateral and public activations—including emergency community response materials for the <a href="projects.html" class="text-emerald-700 underline font-semibold hover:text-emerald-900">Red Cross Netherlands</a>—I analyze this campaign's mechanics:</p>
 
-<h2>Application to Food &amp; Healthy Snack Brands</h2>
-<p>CPG brands can mirror this participatory strategy by aligning with lifestyle moments like back-to-school routines or fitness challenges. Interactive sampling booths, user-generated recipe content, and ambassador activations turn casual snackers into vocal brand advocates.</p>
+            <ul>
+                <li><strong>Amplify Active Conversations:</strong> Tinder didn't force a meme. They identified an organic audience conversation and provided the physical infrastructure to elevate it.</li>
+                <li><strong>Research-Backed Creativity:</strong> Anchoring an eccentric activation in behavioral survey data gave the media strategy clear commercial justification.</li>
+                <li><strong>Participation Over Passive Views:</strong> Prompting attendees to wear branded bald caps turned event-goers into active brand ambassadors and organic content creators.</li>
+            </ul>
 
-<h2>Strategic Takeaway</h2>
-<p>Relevance requires calculated risk. That risk pays off when your campaign amplifies moments your audience is already living inside.</p>
+            <div class="my-8 p-6 bg-[#E8F8EC] border border-black rounded-2xl">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Application to Food &amp; Healthy Snack Brands</h3>
+                <p class="text-sm text-gray-700 leading-relaxed mb-0">CPG brands can mirror this participatory strategy by aligning with lifestyle moments like back-to-school routines or fitness challenges. Interactive sampling booths, user-generated recipe contents, and ambassador activations turn casual snackers into vocal brand advocates.</p>
+            </div>
 
-<div class="mt-16 pt-8 border-t border-[#DED8D0]">
-<h3 class="text-xs uppercase tracking-[.2em] font-bold text-[#64866C] mb-5">References &amp; Sources</h3>
-<ul class="!list-none !p-0 text-sm">
-<li>Tinder Canada Press Room (2024): <em>Tinder Celebrates 'Baldies' Culture &amp; Gen Z Humor with Live Concert Activations.</em></li>
-<li>Strategy Magazine Canada: <em>How Tinder Turned a Concert Meme into an Integrated Earned-Media Success Story.</em></li>
-<li>Social Commerce &amp; Gen Z Culture Report (2024): <em>Meme Marketing, Participatory Events, and Community-Driven Brand Building.</em></li>
-</ul>
-</div>
+            <h2>Strategic Takeaway</h2>
+            <p>Relevance requires calculated risk. That risk pays off when your campaign amplifies moments your audience is already living inside.</p>
+<!-- Reference & Source Citation Section -->
+        <div class="mt-12 pt-8 border-t border-black/10">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-700 mb-4">References &amp; Sources</h3>
+            <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-700 font-bold">•</span>
+                    <span><strong>Tinder Canada Press Room (2024):</strong> <em>Tinder Celebrates 'Baldies' Culture &amp; Gen Z Humor with Live Concert Activations.</em> Official Campaign Announcement.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-700 font-bold">•</span>
+                    <span><strong>Strategy Magazine Canada:</strong> <em>How Tinder Turned a Concert Meme into an Integrated Earned-Media Success Story.</em> Brand Strategy Feature.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-700 font-bold">•</span>
+                    <span><strong>Social Commerce &amp; Gen Z Culture Report (2024):</strong> <em>Meme Marketing, Participatory Events, and Community-Driven Brand Building.</em></span>
+                </li>
+            </ul>
+        </div>
+            <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-2 text-xs font-semibold text-emerald-800">
+                <span class="bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">#CulturalMarketing</span>
+                <span class="bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">#EarnedMedia</span>
+                <span class="bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">#Experiential</span>
+                <span class="bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">#SocialStrategy</span>
+            </div>
+        </article>
 
-<div class="flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-wider text-[#64866C] font-semibold mt-10">
-<span>#CulturalMarketing</span><span>#EarnedMedia</span><span>#Experiential</span><span>#SocialStrategy</span>
-</div>
-</article>
+        <div class="mt-12 bg-white border border-black rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+            <div>
+                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Related Work</span>
+                <h3 class="text-xl font-bold text-gray-900 mt-1">Explore my campaign design portfolio</h3>
+                <p class="text-sm text-gray-600 mt-1">See my creative work for Red Cross Netherlands and global brands.</p>
+            </div>
+            <a href="projects.html" class="bg-[#3F5560] text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#5B7480] transition shrink-0">View Work →</a>
+        </div>
+    </main>
 
-<section class="mt-20 border-t border-[#DED8D0] pt-10 grid md:grid-cols-[1fr_auto] gap-8 items-center">
-<div><span class="text-xs uppercase tracking-[.18em] text-[#64866C] font-bold">Related Work</span><h2 class="serif text-3xl mt-3">Campaign design &amp; creative portfolio</h2><p class="text-sm text-[#777068] mt-3">See my creative work for Red Cross Netherlands and global brands.</p></div>
-<a href="projects.html" class="inline-flex border-b border-[#64866C] pb-2 text-sm font-semibold w-fit">Explore My Work ↗</a>
-</section>
-</main>
+    <footer id="contact" class="bg-[#191919] text-white py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">Let's create work people talk about.</h2>
+            <a href="mailto:punjwanirozina@gmail.com" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full shadow-lg hover:bg-gray-100 transition mb-12">Get in touch</a>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Rozina Punjwani.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="projects.html" class="hover:text-white transition">Projects</a>
+                    <a href="blog.html" class="hover:text-white transition">Blog</a>
+                    <a href="contact.html" class="hover:text-white transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<footer class="bg-[#292724] text-[#F7F4EF] px-6 py-16">
-<div class="max-w-5xl mx-auto">
-<p class="text-xs uppercase tracking-[.2em] text-[#A8C1AC] mb-5">Let's connect</p>
-<h2 class="serif text-4xl md:text-5xl max-w-2xl">Let's create work people talk about.</h2>
-<a href="mailto:punjwanirozina@gmail.com" class="inline-block mt-8 border border-[#A8C1AC] px-7 py-3 text-sm hover:bg-[#A8C1AC] hover:text-[#292724]">Get in touch ↗</a>
-<div class="border-t border-white/20 mt-14 pt-7 flex flex-col md:flex-row justify-between gap-5 text-xs text-white/60"><p>© 2026 Rozina Punjwani. All rights reserved.</p><div class="flex gap-6"><a href="projects.html">Projects</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div></div>
-</div>
-</footer>
-<script>
-window.addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(m>0?scrollY/m*100:0)+'%'});
-</script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
