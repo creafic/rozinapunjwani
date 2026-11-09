@@ -1,138 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyond the Prompt: AI-Assisted Marketing & Workflows | Rozina Punjwani</title>
-    <meta name="description" content="Practical applications of AI tools (ChatGPT, Claude, Perplexity, Canva AI) for campaign ideation, content creation, and scaling brand efficiency.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .article-body p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; font-size: 1rem; }
-        .article-body h2 { font-size: 1.4rem; font-weight: 800; color: #111827; margin: 2.25rem 0 1rem; tracking: -0.02em; }
-        .article-body strong { color: #111827; }
-        .article-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #374151; }
-        .article-body li { margin-bottom: 0.5rem; line-height: 1.7; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Shelf to Scroll | Rozina Punjwani</title>
+<meta name="description" content="How food and healthy snack brands connect retail products with digital experiences through omnichannel marketing.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#B47761;--soft:#F3E6DF}
+body{font-family:'DM Sans',sans-serif;background:#F7F4EF;color:#292724}
+h1,h2,.serif{font-family:'Playfair Display',serif}
+.progress{height:3px;background:var(--accent);width:0;position:fixed;top:0;left:0;z-index:100}
+.article p{line-height:1.95;color:#5E5A55;margin-bottom:1.4rem}
+.article h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin:3rem 0 1rem}
+.article strong{color:#292724}
+.navlink{position:relative}
+.navlink:after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--accent);transition:.3s}
+.navlink:hover:after,.navlink.active:after{width:100%}
+</style>
 </head>
-<body class="bg-[#EAE6F8] text-gray-900 antialiased selection:bg-purple-200">
+<body>
+<div class="progress" id="progress"></div>
+<header class="max-w-7xl mx-auto px-6 py-6">
+<nav class="flex items-center justify-between border-b border-[#DED8D0] pb-5">
+<a href="index.html"><img src="logo.png" alt="Rozina Punjwani" class="h-9"></a>
+<div class="hidden md:flex gap-8 text-sm text-[#625D56]">
+<a class="navlink" href="index.html">Home</a><a class="navlink" href="projects.html">Projects</a><a class="navlink" href="index.html#about">About</a><a class="navlink" href="index.html#process">Process</a><a class="navlink active" href="blog.html">Journal</a><a class="navlink" href="contact.html">Contact</a>
+</div>
+<a href="resume.html" class="text-sm border-b border-[#B47761] pb-1 font-semibold">Résumé ↗</a>
+</nav>
+</header>
 
-    <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
-        <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-full px-8 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <a href="index.html"><img src="logo.png" alt="Rozina Punjwani Logo" class="h-8 object-contain"></a>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-                <a href="index.html" class="hover:text-black transition">Home</a>
-                <a href="projects.html" class="hover:text-black transition">Projects</a>
-                <a href="index.html#about" class="hover:text-black transition">About</a>
-                <a href="index.html#process" class="hover:text-black transition">Process</a>
-                <a href="blog.html" class="text-black font-bold transition">Blog</a>
-                <a href="contact.html" class="hover:text-black transition">Contact</a>
-            </div>
-            <div>
-                <a href="resume.html" target="_blank" rel="noopener" class="bg-[#3F5560] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5B7480] transition-all shadow-sm">Résumé</a>
-            </div>
-        </nav>
-    </header>
+<main class="max-w-5xl mx-auto px-6 pt-10 pb-24">
+<a href="blog.html" class="text-sm text-[#82796F] hover:text-[#B47761]">← Back to Journal</a>
+<section class="max-w-4xl mt-12 mb-10">
+<div class="flex gap-3 text-xs uppercase tracking-[.18em] text-[#B47761] font-bold mb-6"><span>CPG Marketing</span><span class="text-[#BDB5AA]">/</span><span class="text-[#82796F]">6 min read</span></div>
+<h1 class="text-4xl md:text-6xl leading-[1.13] font-semibold mb-7">From Shelf to Scroll: How Food Brands Turn Physical Products into Digital Experiences</h1>
+<p class="text-lg md:text-xl leading-relaxed text-[#777068] max-w-3xl">Winning in modern CPG requires bridging the gap between retail shelves and digital feeds. Here is how food and wellness brands drive velocity and customer loyalty.</p>
+<div class="mt-8 text-sm text-[#82796F]">By Rozina Punjwani <span class="mx-2">·</span> Marketing &amp; Brand Strategy</div>
+</section>
 
-    <main class="max-w-3xl mx-auto px-6 pt-8 pb-24 reveal">
-        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-black transition mb-8">← Back to all articles</a>
+<div class="aspect-[16/9] overflow-hidden mb-16"><img src="blog-4.png" alt="Food products and omnichannel marketing" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80'"></div>
 
-        <div class="mb-4 flex items-center gap-3">
-            <span class="uppercase tracking-wider font-bold text-yellow-800 bg-yellow-100 border border-yellow-300 px-3 py-1 rounded-full text-xs">AI &amp; Innovation</span>
-            <span class="text-xs text-gray-500 font-medium">• 5 min read</span>
-        </div>
-        
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 mt-2 mb-4 leading-tight">
-            Beyond the Prompt: How AI Is Reshaping Content Creation &amp; Campaign Workflows
-        </h1>
-        <p class="text-base text-gray-600 mb-8 font-medium leading-relaxed">AI isn't a replacement for creative strategy—it's a multiplier. Here is how modern marketers use generative AI to accelerate research, content, and execution.</p>
+<article class="article max-w-3xl mx-auto">
+<p class="text-xl font-medium !text-[#39352F]">In the competitive CPG and better-for-you food landscape, getting onto retail shelves at Loblaw, Sobeys, Metro, or Target is only half the battle. The true test is accelerating retail velocity—turning casual shoppers into repeat online and in-store buyers.</p>
 
-        <div class="mb-10 overflow-hidden rounded-3xl border border-black shadow-sm aspect-video bg-yellow-100 flex items-center justify-center">
-            <img src="blog-5.png" alt="AI-Assisted Marketing Strategy and Workflows" class="w-full h-full object-cover" onError="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80'">
-        </div>
+<p>During my time managing consumer campaigns for global CPG portfolios like <a href="projects.html" class="text-[#B47761] underline font-semibold">Mondelez (Tang &amp; Cadbury)</a>, I saw firsthand how aligning media planning with in-store sampling and seasonal packaging led to a 30% sales lift. Today, digital channels make that connection even faster.</p>
 
-        <article class="bg-white border border-black rounded-[32px] p-8 md:p-12 shadow-sm article-body">
-            <p class="text-lg font-semibold text-gray-900 leading-relaxed mb-6">Generative AI has evolved past novelty image generation and basic text prompts. For growth-focused marketers, tools like ChatGPT, Claude, Perplexity, and Canva AI are now essential extensions of daily marketing operations.</p>
+<h2>01. Packaging Designed for Digital Feeds</h2>
+<p>Modern packaging serves a dual purpose: standing out on a grocery shelf and popping on an Instagram reel or TikTok video. Clear allergen callouts, vibrant color palettes, and bold typography make products instantly recognizable in both 3D and 2D formats.</p>
 
-            <p>Having earned certifications in <em>Career Essentials in Generative AI (Microsoft &amp; LinkedIn)</em> and <em>Introduction to Generative AI (Google Cloud)</em>, I integrate AI directly into campaign development workflows:</p>
+<h2>02. Short-Form Video &amp; Recipe Storytelling</h2>
+<p>Consumers don't just buy ingredients; they buy solutions and meal inspiration. Short-form recipe reels showing how better-for-you snacks fit into busy family routines or school lunchboxes transform static product shots into actionable culinary ideas.</p>
 
-            <h2>1. Accelerated Research &amp; Market Insights</h2>
-            <p>Instead of manually synthesizing dozens of consumer reviews, AI tools enable quick thematic clustering—identifying key customer pain points, dietary preferences, and brand perceptions in minutes.</p>
+<h2>03. Multi-Channel Retail Support</h2>
+<p>Connecting digital media spend with retail locations is essential. Running geo-targeted Meta and Google Search campaigns around key retailer clusters reminds local shoppers to look for your brand on their next grocery run.</p>
 
-            <h2>2. Content Calendar Scaling</h2>
-            <p>AI assists in expanding a core campaign concept into multi-channel assets: converting a single blog article into email nurture sequences, social captions, ad hooks, and video storyboards while maintaining brand voice.</p>
+<blockquote class="my-14 py-8 px-8 md:px-12 border-l-2 border-[#B47761]" style="background:var(--soft)">
+<p class="serif text-2xl md:text-3xl !text-[#774C3E] !mb-3">"The strongest CPG strategies make the journey from digital discovery to physical purchase feel seamless."</p>
+<span class="text-xs uppercase tracking-widest text-[#A77B6B]">The Omnichannel Opportunity</span>
+</blockquote>
 
-            <h2>3. Visual Mockups &amp; Campaign Brainstorming</h2>
-            <p>Generative visual tools allow marketing teams to mock up creative concepts and mood boards quickly, streamlining alignment with internal stakeholders and agency partners before entering full production.</p>
+<h2>Key Strategy for Better-For-You Food Brands</h2>
+<p>For allergen-friendly and low-sugar brands, transparency is your strongest differentiator. Combining user-generated reviews, dietitian endorsements, and behind-the-scenes content builds immediate trust with health-conscious families.</p>
 
-            <div class="my-8 p-6 bg-[#FFF3CD] border border-black rounded-2xl">
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Human Strategy + AI Efficiency</h3>
-                <p class="text-sm text-gray-700 leading-relaxed mb-0">AI accelerates execution, but authentic brand voice, strategic judgment, and emotional resonance require experienced human leadership. The competitive edge belongs to marketers who leverage AI for speed while maintaining strict editorial quality control.</p>
-            </div>
+<h2>Strategic Takeaway</h2>
+<p>CPG growth happens when digital awareness directly fuels retail sales. When your online storytelling reflects your physical product experience, shoppers carry your brand from their screens straight to their grocery carts.</p>
 
-            <h2>Strategic Takeaway</h2>
-            <p>Embracing AI tools allows lean marketing teams to operate with enterprise-level agility—spending less time on repetitive tasks and more time on high-impact strategy.</p>
-<!-- Reference & Source Citation Section -->
-        <div class="mt-12 pt-8 border-t border-black/10">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-indigo-700 mb-4">References &amp; Sources</h3>
-            <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
-                <li class="flex items-start gap-2">
-                    <span class="text-indigo-700 font-bold">•</span>
-                    <span><strong>Harvard Business Review (2024):</strong> <em>How Generative AI Is Changing Creative Direction and Strategic Marketing Workflows.</em> HBR Digital Strategy.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <span class="text-indigo-700 font-bold">•</span>
-                    <span><strong>Gartner Marketing Practice:</strong> <em>AI Governance and Human-in-the-Loop Frameworks for Brand Safety &amp; Scaled Asset Generation.</em></span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <span class="text-indigo-700 font-bold">•</span>
-                    <span><strong>Adobe &amp; OpenAI Enterprise Studies (2024):</strong> <em>Accelerated Creative Content Production and Prompt Engineering Workflows in Modern Agencies.</em></span>
-                </li>
-            </ul>
-        </div>
-            <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-2 text-xs font-semibold text-yellow-800">
-                <span class="bg-yellow-50 px-3 py-1 rounded-full border border-yellow-200">#AIMarketing</span>
-                <span class="bg-yellow-50 px-3 py-1 rounded-full border border-yellow-200">#GenerativeAI</span>
-                <span class="bg-yellow-50 px-3 py-1 rounded-full border border-yellow-200">#WorkflowEfficiency</span>
-                <span class="bg-yellow-50 px-3 py-1 rounded-full border border-yellow-200">#MarketingTech</span>
-            </div>
-        </article>
+<div class="mt-16 pt-8 border-t border-[#DED8D0]">
+<h3 class="text-xs uppercase tracking-[.2em] font-bold text-[#B47761] mb-5">References &amp; Sources</h3>
+<ul class="!list-none !p-0 text-sm">
+<li>McKinsey &amp; Company CPG Practice (2024): <em>The State of Grocery &amp; Omnichannel CPG: Navigating the Digital Shelf and Retail Media Networks.</em></li>
+<li>Euromonitor International: <em>FMCG Brand Loyalty and E-Commerce Activation Benchmarks in North America.</em></li>
+<li>Mondelez International &amp; Retail Media Studies: <em>Measuring Integrated 360° Media Lift across TV, Social Commerce, and In-Store POS.</em></li>
+</ul>
+</div>
 
-        <div class="mt-12 bg-white border border-black rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-            <div>
-                <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">Explore Capabilities</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">See my AI-enhanced marketing workflows</h3>
-                <p class="text-sm text-gray-600 mt-1">Learn how I combine AI technology with creative strategy in my daily process.</p>
-            </div>
-            <a href="index.html#process" class="bg-[#3F5560] text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#5B7480] transition shrink-0">View My Process →</a>
-        </div>
-    </main>
+<div class="flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-wider text-[#B47761] font-semibold mt-10">
+<span>#CPGMarketing</span><span>#FoodBranding</span><span>#RetailStrategy</span><span>#Omnichannel</span>
+</div>
+</article>
 
-    <footer id="contact" class="bg-[#191919] text-white py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">Let's innovate together.</h2>
-            <a href="mailto:punjwanirozina@gmail.com" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full shadow-lg hover:bg-gray-100 transition mb-12">Get in touch</a>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                <p>&copy; 2026 Rozina Punjwani.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="projects.html" class="hover:text-white transition">Projects</a>
-                    <a href="blog.html" class="hover:text-white transition">Blog</a>
-                    <a href="contact.html" class="hover:text-white transition">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<section class="mt-20 border-t border-[#DED8D0] pt-10 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+<div><span class="text-xs uppercase tracking-[.18em] text-[#B47761] font-bold">Case Study</span><h2 class="serif text-3xl mt-3">Mondelez CPG brand strategy</h2><p class="text-sm text-[#777068] mt-3">Discover how integrated media planning delivered a 30% sales lift for Tang &amp; Cadbury.</p></div>
+<a href="projects.html" class="inline-flex border-b border-[#B47761] pb-2 text-sm font-semibold w-fit">Explore CPG Strategy ↗</a>
+</section>
+</main>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+<footer class="bg-[#292724] text-[#F7F4EF] px-6 py-16">
+<div class="max-w-5xl mx-auto">
+<p class="text-xs uppercase tracking-[.2em] text-[#D0A18E] mb-5">Let's connect</p>
+<h2 class="serif text-4xl md:text-5xl max-w-2xl">Let's grow your food brand.</h2>
+<a href="mailto:punjwanirozina@gmail.com" class="inline-block mt-8 border border-[#D0A18E] px-7 py-3 text-sm hover:bg-[#D0A18E] hover:text-[#292724]">Get in touch ↗</a>
+<div class="border-t border-white/20 mt-14 pt-7 flex flex-col md:flex-row justify-between gap-5 text-xs text-white/60"><p>© 2026 Rozina Punjwani. All rights reserved.</p><div class="flex gap-6"><a href="projects.html">Projects</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div></div>
+</div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(m>0?scrollY/m*100:0)+'%'});
+</script>
 </body>
 </html>
