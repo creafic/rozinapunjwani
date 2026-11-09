@@ -1,138 +1,148 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Power of Product Storytelling: Retention & Loyalty | Rozina Punjwani</title>
-    <meta name="description" content="How consumer brands turn first-time buyers into loyal repeat customers through email marketing, community engagement, and authentic product storytelling.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .article-body p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; font-size: 1rem; }
-        .article-body h2 { font-size: 1.4rem; font-weight: 800; color: #111827; margin: 2.25rem 0 1rem; tracking: -0.02em; }
-        .article-body strong { color: #111827; }
-        .article-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #374151; }
-        .article-body li { margin-bottom: 0.5rem; line-height: 1.7; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Power of Product Storytelling | Rozina Punjwani</title>
+<meta name="description" content="How consumer brands turn first-time buyers into loyal repeat customers through email marketing, community engagement and authentic product storytelling.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#9A765D;--soft:#EFE6DD}
+body{font-family:'DM Sans',sans-serif;background:#F7F4EF;color:#292724}
+h1,h2,.serif{font-family:'Playfair Display',serif}
+.progress{height:3px;background:var(--accent);width:0;position:fixed;top:0;left:0;z-index:100}
+.article p{line-height:1.95;color:#5E5A55;margin-bottom:1.4rem}
+.article h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin:3rem 0 1rem}
+.article strong{color:#292724}
+.article ul{list-style:disc;padding-left:1.5rem;margin:1rem 0 2rem;color:#5E5A55}
+.article li{line-height:1.85;margin-bottom:.85rem}
+.navlink{position:relative}
+.navlink:after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--accent);transition:.3s}
+.navlink:hover:after,.navlink.active:after{width:100%}
+</style>
 </head>
-<body class="bg-[#EAE6F8] text-gray-900 antialiased selection:bg-purple-200">
+<body>
+<div class="progress" id="progress"></div>
 
-    <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
-        <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-full px-8 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <a href="index.html"><img src="logo.png" alt="Rozina Punjwani Logo" class="h-8 object-contain"></a>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-                <a href="index.html" class="hover:text-black transition">Home</a>
-                <a href="projects.html" class="hover:text-black transition">Projects</a>
-                <a href="index.html#about" class="hover:text-black transition">About</a>
-                <a href="index.html#process" class="hover:text-black transition">Process</a>
-                <a href="blog.html" class="text-black font-bold transition">Blog</a>
-                <a href="contact.html" class="hover:text-black transition">Contact</a>
-            </div>
-            <div>
-                <a href="resume.html" target="_blank" rel="noopener" class="bg-[#3F5560] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5B7480] transition-all shadow-sm">Résumé</a>
-            </div>
-        </nav>
-    </header>
+<header class="max-w-7xl mx-auto px-6 py-6">
+<nav class="flex items-center justify-between border-b border-[#DED8D0] pb-5">
+<a href="index.html"><img src="logo.png" alt="Rozina Punjwani" class="h-9"></a>
+<div class="hidden md:flex gap-8 text-sm text-[#625D56]">
+<a class="navlink" href="index.html">Home</a>
+<a class="navlink" href="projects.html">Projects</a>
+<a class="navlink" href="index.html#about">About</a>
+<a class="navlink" href="index.html#process">Process</a>
+<a class="navlink active" href="blog.html">Journal</a>
+<a class="navlink" href="contact.html">Contact</a>
+</div>
+<a href="resume.html" class="text-sm border-b border-[#9A765D] pb-1 font-semibold">Résumé ↗</a>
+</nav>
+</header>
 
-    <main class="max-w-3xl mx-auto px-6 pt-8 pb-24 reveal">
-        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-black transition mb-8">← Back to all articles</a>
+<main class="max-w-5xl mx-auto px-6 pt-10 pb-24">
+<a href="blog.html" class="text-sm text-[#82796F] hover:text-[#9A765D]">← Back to Journal</a>
 
-        <div class="mb-4 flex items-center gap-3">
-            <span class="uppercase tracking-wider font-bold text-blue-800 bg-blue-100 border border-blue-300 px-3 py-1 rounded-full text-xs">Content &amp; Retention</span>
-            <span class="text-xs text-gray-500 font-medium">• 5 min read</span>
-        </div>
-        
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 mt-2 mb-4 leading-tight">
-            The Power of Product Storytelling: Turning First-Time Buyers into Loyal Brand Advocates
-        </h1>
-        <p class="text-base text-gray-600 mb-8 font-medium leading-relaxed">Customer acquisition gets buyers through the door. Authentic product storytelling and post-purchase engagement keep them coming back.</p>
+<section class="max-w-4xl mt-12 mb-10">
+<div class="flex flex-wrap gap-3 text-xs uppercase tracking-[.18em] text-[#9A765D] font-bold mb-6">
+<span>Content &amp; Retention</span>
+<span class="text-[#BDB5AA]">/</span>
+<span class="text-[#82796F]">5 min read</span>
+</div>
 
-        <div class="mb-10 overflow-hidden rounded-3xl border border-black shadow-sm aspect-video bg-blue-100 flex items-center justify-center">
-            <img src="blog-6.png" alt="Product Storytelling and Retention Strategy" class="w-full h-full object-cover" onError="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80'">
-        </div>
+<h1 class="text-4xl md:text-6xl leading-[1.13] font-semibold mb-7">
+The Power of Product Storytelling: Turning First-Time Buyers into Loyal Brand Advocates
+</h1>
 
-        <article class="bg-white border border-black rounded-[32px] p-8 md:p-12 shadow-sm article-body">
-            <p class="text-lg font-semibold text-gray-900 leading-relaxed mb-6">In paid media and e-commerce, customer acquisition cost (CAC) continues to rise. For consumer food and lifestyle brands, driving sustainable profitability depends on customer lifetime value (LTV)—converting one-time shoppers into repeat buyers.</p>
+<p class="text-lg md:text-xl leading-relaxed text-[#777068] max-w-3xl">
+Customer acquisition gets buyers through the door. Authentic product storytelling and post-purchase engagement keep them coming back.
+</p>
 
-            <p>During my tenure at <a href="projects.html" class="text-blue-700 underline font-semibold hover:text-blue-900">Mini Moes and A1Dynamics</a>, I managed CRM sequences in HubSpot and Mailchimp that nurtured leads into active buyers. Here is how product storytelling powers that journey:</p>
+<div class="mt-8 text-sm text-[#82796F]">By Rozina Punjwani <span class="mx-2">·</span> Marketing &amp; Brand Strategy</div>
+</section>
 
-            <h2>1. Transparent Brand Origin Story</h2>
-            <p>Consumers connect with purpose. Sharing why a brand was founded—whether to solve allergen challenges or provide cleaner ingredients—builds an authentic emotional connection that low-price competitors cannot replicate.</p>
+<div class="aspect-[16/9] overflow-hidden mb-16 bg-[#EFE6DD]">
+<img src="blog-6.png" alt="Product storytelling and customer retention strategy" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80'">
+</div>
 
-            <h2>2. Post-Purchase Email Nurturing</h2>
-            <p>The post-purchase email sequence is often underutilized. Sending welcome onboarding emails, snack pairing suggestions, and exclusive recipes transforms a simple order confirmation into an engaging brand experience.</p>
+<article class="article max-w-3xl mx-auto">
 
-            <h2>3. User-Generated Content &amp; Ambassador Proof</h2>
-            <p>Highlighting real customer reviews, lunchbox ideas from parents, and unboxing videos creates social proof. Showing prospective buyers how real families enjoy your products builds immediate purchasing confidence.</p>
+<p class="text-xl font-medium !text-[#39352F]">
+In paid media and e-commerce, customer acquisition cost (CAC) continues to rise. For consumer food and lifestyle brands, driving sustainable profitability depends on customer lifetime value (LTV)—converting one-time shoppers into repeat buyers.
+</p>
 
-            <div class="my-8 p-6 bg-[#E0F2FE] border border-black rounded-2xl">
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Retention Strategy for Food &amp; Retail</h3>
-                <p class="text-sm text-gray-700 leading-relaxed mb-0">Building a community email newsletter that shares nutritional tips, family recipes, and early access to new product drops turns casual consumers into loyal brand ambassadors who actively champion your products.</p>
-            </div>
+<p>During my tenure at <a href="projects.html" class="text-[#9A765D] underline font-semibold">Mini Moes and A1Dynamics</a>, I managed CRM sequences in HubSpot and Mailchimp that nurtured leads into active buyers. Here is how product storytelling powers that journey:</p>
 
-            <h2>Strategic Takeaway</h2>
-            <p>Products satisfy needs, but stories build loyalty. When you communicate your brand values consistently, buyers don't just purchase a product—they join your mission.</p>
-<!-- Reference & Source Citation Section -->
-        <div class="mt-12 pt-8 border-t border-black/10">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-sky-700 mb-4">References &amp; Sources</h3>
-            <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
-                <li class="flex items-start gap-2">
-                    <span class="text-sky-700 font-bold">•</span>
-                    <span><strong>HubSpot Research &amp; Customer Retention Benchmarks (2024):</strong> <em>The Shift from Acquisition Hype to Lifecycle Narrative: How Post-Purchase Storytelling Drives LTV.</em></span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <span class="text-sky-700 font-bold">•</span>
-                    <span><strong>Bain &amp; Company:</strong> <em>The Economics of Customer Loyalty and CRM Nurture Sequences in Subscription &amp; Retail Brands.</em></span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <span class="text-sky-700 font-bold">•</span>
-                    <span><strong>Journal of Brand Management:</strong> <em>Authentic Brand Storytelling and Its Impact on Repeated Purchase Intentions and Customer Advocacy.</em></span>
-                </li>
-            </ul>
-        </div>
-            <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-2 text-xs font-semibold text-blue-800">
-                <span class="bg-blue-50 px-3 py-1 rounded-full border border-blue-200">#ContentMarketing</span>
-                <span class="bg-blue-50 px-3 py-1 rounded-full border border-blue-200">#EmailCRM</span>
-                <span class="bg-blue-50 px-3 py-1 rounded-full border border-blue-200">#CustomerRetention</span>
-                <span class="bg-blue-50 px-3 py-1 rounded-full border border-blue-200">#BrandLoyalty</span>
-            </div>
-        </article>
+<h2>01. Transparent Brand Origin Story</h2>
+<p>Consumers connect with purpose. Sharing why a brand was founded—whether to solve allergen challenges or provide cleaner ingredients—builds an authentic emotional connection that low-price competitors cannot replicate.</p>
 
-        <div class="mt-12 bg-white border border-black rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-            <div>
-                <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">Related Work</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">See my CRM &amp; email marketing experience</h3>
-                <p class="text-sm text-gray-600 mt-1">Discover how I built lead nurture sequences and social campaigns for customer growth.</p>
-            </div>
-            <a href="projects.html" class="bg-[#3F5560] text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#5B7480] transition shrink-0">View Projects →</a>
-        </div>
-    </main>
+<h2>02. Post-Purchase Email Nurturing</h2>
+<p>The post-purchase email sequence is often underutilized. Sending welcome onboarding emails, snack pairing suggestions, and exclusive recipes transforms a simple order confirmation into an engaging brand experience.</p>
 
-    <footer id="contact" class="bg-[#191919] text-white py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">Let's build brand loyalty.</h2>
-            <a href="mailto:punjwanirozina@gmail.com" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full shadow-lg hover:bg-gray-100 transition mb-12">Get in touch</a>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                <p>&copy; 2026 Rozina Punjwani.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="projects.html" class="hover:text-white transition">Projects</a>
-                    <a href="blog.html" class="hover:text-white transition">Blog</a>
-                    <a href="contact.html" class="hover:text-white transition">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<h2>03. User-Generated Content &amp; Ambassador Proof</h2>
+<p>Highlighting real customer reviews, lunchbox ideas from parents, and unboxing videos creates social proof. Showing prospective buyers how real families enjoy your products builds immediate purchasing confidence.</p>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+<blockquote class="my-14 py-8 px-8 md:px-12 border-l-2 border-[#9A765D]" style="background:var(--soft)">
+<p class="serif text-2xl md:text-3xl !text-[#72533E] !mb-3">"Products satisfy needs, but stories build loyalty."</p>
+<span class="text-xs uppercase tracking-widest text-[#9A765D]">The Power of Product Storytelling</span>
+</blockquote>
+
+<h2>Retention Strategy for Food &amp; Retail</h2>
+<p>Building a community email newsletter that shares nutritional tips, family recipes, and early access to new product drops turns casual consumers into loyal brand ambassadors who actively champion your products.</p>
+
+<h2>Strategic Takeaway</h2>
+<p>Products satisfy needs, but stories build loyalty. When you communicate your brand values consistently, buyers don't just purchase a product—they join your mission.</p>
+
+<div class="mt-16 pt-8 border-t border-[#DED8D0]">
+<h3 class="text-xs uppercase tracking-[.2em] font-bold text-[#9A765D] mb-5">References &amp; Sources</h3>
+<ul class="!list-none !p-0 text-sm">
+<li>HubSpot Research &amp; Customer Retention Benchmarks (2024): <em>The Shift from Acquisition Hype to Lifecycle Narrative: How Post-Purchase Storytelling Drives LTV.</em></li>
+<li>Bain &amp; Company: <em>The Economics of Customer Loyalty and CRM Nurture Sequences in Subscription &amp; Retail Brands.</em></li>
+<li>Journal of Brand Management: <em>Authentic Brand Storytelling and Its Impact on Repeated Purchase Intentions and Customer Advocacy.</em></li>
+</ul>
+</div>
+
+<div class="flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-wider text-[#9A765D] font-semibold mt-10">
+<span>#ContentMarketing</span>
+<span>#EmailCRM</span>
+<span>#CustomerRetention</span>
+<span>#BrandLoyalty</span>
+</div>
+
+</article>
+
+<section class="mt-20 border-t border-[#DED8D0] pt-10 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+<div>
+<span class="text-xs uppercase tracking-[.18em] text-[#9A765D] font-bold">Related Work</span>
+<h2 class="serif text-3xl mt-3">CRM &amp; email marketing experience</h2>
+<p class="text-sm text-[#777068] mt-3">Discover how I built lead nurture sequences and social campaigns for customer growth.</p>
+</div>
+<a href="projects.html" class="inline-flex border-b border-[#9A765D] pb-2 text-sm font-semibold w-fit">Explore My Projects ↗</a>
+</section>
+</main>
+
+<footer class="bg-[#292724] text-[#F7F4EF] px-6 py-16">
+<div class="max-w-5xl mx-auto">
+<p class="text-xs uppercase tracking-[.2em] text-[#C5A68F] mb-5">Let's connect</p>
+<h2 class="serif text-4xl md:text-5xl max-w-2xl">Let's build brand loyalty.</h2>
+<a href="mailto:punjwanirozina@gmail.com" class="inline-block mt-8 border border-[#C5A68F] px-7 py-3 text-sm hover:bg-[#C5A68F] hover:text-[#292724]">Get in touch ↗</a>
+<div class="border-t border-white/20 mt-14 pt-7 flex flex-col md:flex-row justify-between gap-5 text-xs text-white/60">
+<p>© 2026 Rozina Punjwani. All rights reserved.</p>
+<div class="flex gap-6">
+<a href="projects.html">Projects</a>
+<a href="blog.html">Journal</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+const m=document.documentElement.scrollHeight-innerHeight;
+document.getElementById('progress').style.width=(m>0?scrollY/m*100:0)+'%';
+});
+</script>
 </body>
 </html>
