@@ -1,137 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Art of Quiet Authority: B2B Brand Building & Trust | Rozina Punjwani</title>
-    <meta name="description" content="Why high-stakes brands win with clarity and consistency rather than viral stunts. An analysis of Ameriprise Financial's brand platform strategy.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .article-body p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; font-size: 1rem; }
-        .article-body h2 { font-size: 1.4rem; font-weight: 800; color: #111827; margin: 2.25rem 0 1rem; tracking: -0.02em; }
-        .article-body strong { color: #111827; }
-        .article-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #374151; }
-        .article-body li { margin-bottom: 0.5rem; line-height: 1.7; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Art of Quiet Authority | Rozina Punjwani</title>
+<meta name="description" content="An analysis of Ameriprise Financial's brand platform and B2B brand trust strategy.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#A88745;--soft:#F3EBD8}
+body{font-family:'DM Sans',sans-serif;background:#F7F4EF;color:#292724}
+h1,h2,.serif{font-family:'Playfair Display',serif}
+.progress{height:3px;background:var(--accent);width:0;position:fixed;top:0;left:0;z-index:100}
+.article p{line-height:1.95;color:#5E5A55;margin-bottom:1.4rem}
+.article h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin:3rem 0 1rem}
+.article strong{color:#292724}
+.article ul{list-style:disc;padding-left:1.5rem;margin:1rem 0 2rem;color:#5E5A55}
+.article li{line-height:1.85;margin-bottom:.85rem}
+.navlink{position:relative}
+.navlink:after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--accent);transition:.3s}
+.navlink:hover:after,.navlink.active:after{width:100%}
+</style>
 </head>
-<body class="bg-[#EAE6F8] text-gray-900 antialiased selection:bg-purple-200">
+<body>
+<div class="progress" id="progress"></div>
+<header class="max-w-7xl mx-auto px-6 py-6">
+<nav class="flex items-center justify-between border-b border-[#DED8D0] pb-5">
+<a href="index.html"><img src="logo.png" alt="Rozina Punjwani" class="h-9"></a>
+<div class="hidden md:flex gap-8 text-sm text-[#625D56]">
+<a class="navlink" href="index.html">Home</a><a class="navlink" href="projects.html">Projects</a><a class="navlink" href="index.html#about">About</a><a class="navlink" href="index.html#process">Process</a><a class="navlink active" href="blog.html">Journal</a><a class="navlink" href="contact.html">Contact</a>
+</div>
+<a href="resume.html" class="text-sm border-b border-[#A88745] pb-1 font-semibold">Résumé ↗</a>
+</nav>
+</header>
 
-    <header class="max-w-7xl mx-auto px-6 py-6 sticky top-4 z-50">
-        <nav class="bg-white/90 backdrop-blur-md border border-black shadow-sm rounded-full px-8 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <a href="index.html"><img src="logo.png" alt="Rozina Punjwani Logo" class="h-8 object-contain"></a>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-                <a href="index.html" class="hover:text-black transition">Home</a>
-                <a href="projects.html" class="hover:text-black transition">Projects</a>
-                <a href="index.html#about" class="hover:text-black transition">About</a>
-                <a href="index.html#process" class="hover:text-black transition">Process</a>
-                <a href="blog.html" class="text-black font-bold transition">Blog</a>
-                <a href="contact.html" class="hover:text-black transition">Contact</a>
-            </div>
-            <div>
-                <a href="resume.html" target="_blank" rel="noopener" class="bg-[#3F5560] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#5B7480] transition-all shadow-sm">Résumé</a>
-            </div>
-        </nav>
-    </header>
+<main class="max-w-5xl mx-auto px-6 pt-10 pb-24">
+<a href="blog.html" class="text-sm text-[#82796F] hover:text-[#A88745]">← Back to Journal</a>
+<section class="max-w-4xl mt-12 mb-10">
+<div class="flex gap-3 text-xs uppercase tracking-[.18em] text-[#A88745] font-bold mb-6"><span>Brand Strategy &amp; Trust</span><span class="text-[#BDB5AA]">/</span><span class="text-[#82796F]">4 min read</span></div>
+<h1 class="text-4xl md:text-6xl leading-[1.13] font-semibold mb-7">The Art of Quiet Authority: What Ameriprise Teaches Us About High-Stakes Storytelling</h1>
+<p class="text-lg md:text-xl leading-relaxed text-[#777068] max-w-3xl">Modern marketing often overvalues noise. But in high-consideration sectors, authority is built through clarity, channel discipline, and strategic repetition.</p>
+<div class="mt-8 text-sm text-[#82796F]">By Rozina Punjwani <span class="mx-2">·</span> Marketing &amp; Brand Strategy</div>
+</section>
 
-    <main class="max-w-3xl mx-auto px-6 pt-8 pb-24 reveal">
-        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-black transition mb-8">← Back to all articles</a>
+<div class="aspect-[16/9] overflow-hidden mb-16"><img src="blog-2.png" alt="Ameriprise campaign visual" class="w-full h-full object-cover"></div>
 
-        <div class="mb-4 flex items-center gap-3">
-            <span class="uppercase tracking-wider font-bold text-amber-700 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full text-xs">Brand Strategy &amp; Trust</span>
-            <span class="text-xs text-gray-500 font-medium">• 4 min read</span>
-        </div>
-        
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 mt-2 mb-4 leading-tight">
-            The Art of Quiet Authority: What Ameriprise Teaches Us About High-Stakes Storytelling
-        </h1>
-        <p class="text-base text-gray-600 mb-8 font-medium leading-relaxed">Modern marketing often overvalues noise. But in high-consideration sectors, authority is built through clarity, channel discipline, and strategic repetition.</p>
+<article class="article max-w-3xl mx-auto">
+<p class="text-xl font-medium !text-[#39352F]">Marketing strategy frequently celebrates viral stunts designed to grab quick attention. But what happens when what you sell isn't a quick impulse purchase, but long-term consumer trust?</p>
+<p>Ameriprise Financial launched an extension of its long-running "Advice Worth Talking About" brand platform. Rather than pivoting to a trendy message, they doubled down on real-life advisory scenarios deployed across podcast sponsorships, targeted digital media, and social channels.</p>
+<p>Having developed B2B messaging and UX strategy during the <a href="projects.html" class="text-[#A88745] underline font-semibold">A1Dynamics corporate redesign</a>—where shortening sales cycles required building credibility over time—I appreciate the strategy behind quiet authority:</p>
 
-        <div class="mb-10 overflow-hidden rounded-3xl border border-black shadow-sm aspect-video bg-amber-100">
-            <img src="blog-2.png" alt="Ameriprise Campaign Visual" class="w-full h-full object-cover">
-        </div>
+<h2>Building Trust Through Consistency</h2>
+<ul>
+<li><strong>Channel Selection as a Signal:</strong> Long-form podcasts build intimate, conversational trust over time. Selecting channels based on listener affinity rather than pure impression volume signals respect for the audience's decision-making process.</li>
+<li><strong>Consistency over Novelty:</strong> Re-investing in an established brand platform compounds equity over time. True brand strength lies in consistent positioning rather than constant reinvention.</li>
+<li><strong>Clear Narrative Arc:</strong> Simplifying complex value propositions into relatable human stories lowers friction for high-stakes decisions.</li>
+</ul>
 
-        <article class="bg-white border border-black rounded-[32px] p-8 md:p-12 shadow-sm article-body">
-            <p class="text-lg font-semibold text-gray-900 leading-relaxed mb-6">Marketing strategy frequently celebrates viral stunts designed to grab quick attention. But what happens when what you sell isn't a quick impulse purchase, but long-term consumer trust?</p>
+<blockquote class="my-14 py-8 px-8 md:px-12 border-l-2 border-[#A88745]" style="background:var(--soft)">
+<p class="serif text-2xl md:text-3xl !text-[#705D36] !mb-3">"In high-stakes marketing, clarity can be more persuasive than volume."</p>
+<span class="text-xs uppercase tracking-widest text-[#927E56]">The Power of Quiet Authority</span>
+</blockquote>
 
-            <p>Ameriprise Financial launched an extension of its long-running "Advice Worth Talking About" brand platform. Rather than pivoting to a trendy message, they doubled down on real-life advisory scenarios deployed across podcast sponsorships, targeted digital media, and social channels.</p>
+<h2>Applying Quiet Authority to CPG &amp; Food Brands</h2>
+<p>Food and wellness brands face similar consumer skepticism regarding ingredients, sourcing, and health claims. Instead of relying purely on flashy hype, brands that communicate ingredient transparency and nutritional benefits clearly build long-term repeat purchases and retail buyer confidence.</p>
 
-            <p>Having developed B2B messaging and UX strategy during the <a href="projects.html" class="text-amber-700 underline font-semibold hover:text-amber-900">A1Dynamics corporate redesign</a>—where shortening sales cycles required building credibility over time—I appreciate the strategy behind quiet authority:</p>
+<h2>Strategic Takeaway</h2>
+<p>In trust-sensitive industries, your brand doesn't need to shout to be heard. It needs to be the clearest, most reliable partner in the conversation.</p>
 
-            <ul>
-                <li><strong>Channel Selection as a Signal:</strong> Long-form podcasts build intimate, conversational trust over time. Selecting channels based on listener affinity rather than pure impression volume signals respect for the audience's decision-making process.</li>
-                <li><strong>Consistency over Novelty:</strong> Re-investing in an established brand platform compounds equity over time. True brand strength lies in consistent positioning rather than constant reinvention.</li>
-                <li><strong>Clear Narrative Arc:</strong> Simplifying complex value propositions into relatable human stories lowers friction for high-stakes decisions.</li>
-            </ul>
+<div class="mt-16 pt-8 border-t border-[#DED8D0]">
+<h3 class="text-xs uppercase tracking-[.2em] font-bold text-[#A88745] mb-5">References &amp; Sources</h3>
+<ul class="!list-none !p-0 text-sm">
+<li>Ameriprise Financial Newsroom (2024): <em>Ameriprise Financial Launches New National Advertising Campaign Focused on Advice and Relationships.</em></li>
+<li>Adweek / Financial Brand Analysis: <em>Navigating High-Stakes Financial Marketing in Volatile Economic Climates.</em></li>
+<li>Kantar &amp; Ipsos Financial Trust Benchmarks (2023–2024): <em>Consumer Trust and Brand Equity Metrics in Wealth Management Advertising.</em></li>
+</ul>
+</div>
 
-            <div class="my-8 p-6 bg-[#FFF3CD] border border-black rounded-2xl">
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Applying Quiet Authority to CPG &amp; Food Brands</h3>
-                <p class="text-sm text-gray-700 leading-relaxed mb-0">Food and wellness brands face similar consumer skepticism regarding ingredients, sourcing, and health claims. Instead of relying purely on flashy hype, brands that communicate ingredient transparency and nutritional benefits clearly build long-term repeat purchases and retail buyer confidence.</p>
-            </div>
+<div class="flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-wider text-[#A88745] font-semibold mt-10">
+<span>#BrandTrust</span><span>#B2BMarketing</span><span>#ContentStrategy</span><span>#Positioning</span>
+</div>
+</article>
 
-            <h2>Strategic Takeaway</h2>
-            <p>In trust-sensitive industries, your brand doesn't need to shout to be heard. It needs to be the clearest, most reliable partner in the conversation.</p>
-<!-- Reference & Source Citation Section -->
-        <div class="mt-12 pt-8 border-t border-black/10">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-amber-700 mb-4">References &amp; Sources</h3>
-            <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
-                <li class="flex items-start gap-2">
-                    <span class="text-amber-700 font-bold">•</span>
-                    <span><strong>Ameriprise Financial Newsroom (2024):</strong> <em>Ameriprise Financial Launches New National Advertising Campaign Focused on Advice and Relationships.</em> Official Campaign Release &amp; Press Materials.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <span class="text-amber-700 font-bold">•</span>
-                    <span><strong>Adweek / Financial Brand Analysis:</strong> <em>Navigating High-Stakes Financial Marketing in Volatile Economic Climates.</em> B2B &amp; Wealth Management Campaign Review.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <span class="text-amber-700 font-bold">•</span>
-                    <span><strong>Kantar &amp; Ipsos Financial Trust Benchmarks (2023–2024):</strong> <em>Consumer Trust and Brand Equity Metrics in Wealth Management Advertising.</em></span>
-                </li>
-            </ul>
-        </div>
-            <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-2 text-xs font-semibold text-amber-800">
-                <span class="bg-amber-50 px-3 py-1 rounded-full border border-amber-200">#BrandTrust</span>
-                <span class="bg-amber-50 px-3 py-1 rounded-full border border-amber-200">#B2BMarketing</span>
-                <span class="bg-amber-50 px-3 py-1 rounded-full border border-amber-200">#ContentStrategy</span>
-                <span class="bg-amber-50 px-3 py-1 rounded-full border border-amber-200">#Positioning</span>
-            </div>
-        </article>
+<section class="mt-20 border-t border-[#DED8D0] pt-10 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+<div><span class="text-xs uppercase tracking-[.18em] text-[#A88745] font-bold">Related Experience</span><h2 class="serif text-3xl mt-3">B2B demand-generation work</h2><p class="text-sm text-[#777068] mt-3">See how clear messaging grew organic traffic by 40% for A1Dynamics.</p></div>
+<a href="projects.html" class="inline-flex border-b border-[#A88745] pb-2 text-sm font-semibold w-fit">View Case Study ↗</a>
+</section>
+</main>
 
-        <div class="mt-12 bg-white border border-black rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-            <div>
-                <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Related Experience</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">Explore my B2B demand-generation work</h3>
-                <p class="text-sm text-gray-600 mt-1">See how clear messaging grew organic traffic by 40% for A1Dynamics.</p>
-            </div>
-            <a href="projects.html" class="bg-[#3F5560] text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#5B7480] transition shrink-0">View Case Study →</a>
-        </div>
-    </main>
-
-    <footer id="contact" class="bg-[#191919] text-white py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">Let's build lasting brand equity.</h2>
-            <a href="mailto:punjwanirozina@gmail.com" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full shadow-lg hover:bg-gray-100 transition mb-12">Get in touch</a>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                <p>&copy; 2026 Rozina Punjwani.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="projects.html" class="hover:text-white transition">Projects</a>
-                    <a href="blog.html" class="hover:text-white transition">Blog</a>
-                    <a href="contact.html" class="hover:text-white transition">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+<footer class="bg-[#292724] text-[#F7F4EF] px-6 py-16">
+<div class="max-w-5xl mx-auto">
+<p class="text-xs uppercase tracking-[.2em] text-[#C5AC75] mb-5">Let's connect</p>
+<h2 class="serif text-4xl md:text-5xl max-w-2xl">Let's build lasting brand equity.</h2>
+<a href="mailto:punjwanirozina@gmail.com" class="inline-block mt-8 border border-[#C5AC75] px-7 py-3 text-sm hover:bg-[#C5AC75] hover:text-[#292724]">Get in touch ↗</a>
+<div class="border-t border-white/20 mt-14 pt-7 flex flex-col md:flex-row justify-between gap-5 text-xs text-white/60"><p>© 2026 Rozina Punjwani. All rights reserved.</p><div class="flex gap-6"><a href="projects.html">Projects</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div></div>
+</div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(m>0?scrollY/m*100:0)+'%'});
+</script>
 </body>
 </html>
